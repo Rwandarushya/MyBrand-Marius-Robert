@@ -10,9 +10,6 @@ body{
     background-position: right;
     background-size: contain;
 }
-h1{
-font-size: 1.5rem;
-}
 
 .wrapper{
     height:100vh;    
@@ -26,13 +23,23 @@ nav{
     justify-content: flex-start;
 }
 
-nav >div{ 
-    flex-basis:3em; 
+nav >div{  
     margin:0 2em;
 }
 
 nav >div:first-child{
-    margin-right:30em;
+    margin-right:20em;
+}
+.nav-link{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link{
+    background-color: #252526;
+    padding: 1em;
+    border-radius: 5px;
+    color: #fff;
 }
 
 .highlight{
