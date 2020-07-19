@@ -32,12 +32,12 @@ nav >div:first-child{
 }
 .nav-link{
     text-decoration: none;
-    font-weight: bold;
+    color: black;
 }
 
 .signup-link{
     background-color: #252526;
-    padding: 1em;
+    padding: 0.3em;
     border-radius: 5px;
     color: #fff;
 }
@@ -55,14 +55,19 @@ nav >div:first-child{
 }
 
 
+
 .moreBtn{
-    width: 15em;
-    height: 4em;
-    border-radius: 10px;
+    width: 10em;
+    height: 2em;
+    border-radius: 5px;
     background-color: #252526;
     color:#fff;
     font-size: 1rem;
 }
+.moreBtn:hover{
+    transform: scale(1.05);
+}
+
 .content >*{
     margin-bottom: 1.5em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -70,8 +75,9 @@ nav >div:first-child{
 
 .profile{
     width:15em;
-    height: 15em;
+    height: 15rem;
     border-radius: 50%;
+    box-shadow: 0 0 10px 10px #E5E5E5;
 }
 
 

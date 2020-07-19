@@ -10,7 +10,8 @@
 }
 .contact_header{
     display: flex;
-    background-color:  #F0EFEF;
+    background-color: #252526;
+     /* background-color: #F0EFEF; */
     align-items: center;
     flex-direction: column;
 }
@@ -30,12 +31,12 @@ nav >div:first-child{
 }
 .nav-link{
     text-decoration: none;
-    font-weight: bold;
+    color: white;
 }
 
 .signup-link{
     background-color: #2369AA;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 5px;
     color: #fff;
 }
@@ -43,6 +44,7 @@ nav >div:first-child{
 .title{
     margin-top: 5em;
     margin-bottom: 2em;
+    color:white;
 }
 
 .info > div{

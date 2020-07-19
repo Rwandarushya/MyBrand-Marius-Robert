@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    margin-top: 2em;   
+}
+
+.navbar >div{
+    margin-left: 3em;
+}
+
+.navbar >div:first-child{
+    margin-right: 20em;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+
+.signup-link{
+    background-color: #252526;
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+.abt-img{
+    width:100vw;
+    height: 100vh;
+    margin-top: 2em;
+}
+.back-img{
+    width: 100%;
+    height: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content>p{
+    width: 60vw;
+}
+
+.first-p{
+    font-size: 1.5em;
+    margin-top: 2.5em;
+    line-height: 1.6;
+}
+.second-p{
+    margin:2em;
+}

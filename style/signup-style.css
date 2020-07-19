@@ -20,12 +20,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-     background-color: #F0EFEF;
-     font-weight: bold;
+    background-color: #252526;
+     /* background-color: #F0EFEF; */
      height:4em;
 }
 .nav-link{
     text-decoration: none;
+    color: white;
 }
 .navbar >div:first-child{
     margin-right:20em;
