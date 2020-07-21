@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    margin-top: 2em;   
+}
+
+.navbar >div{
+    margin-left: 3em;
+}
+
+.navbar >div:first-child{
+    margin-right: 20em;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+
+.signup-link{
+    background-color: #252526;
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.content-wrapper{
+    display: flex;
+    width: 80vw;
+    height: 100vh;
+    background-color: #FEFCF7 ;
+    margin:auto;
+    margin-top:2em;
+    box-shadow: 10px 5px 10px 2px #888888
+}
+.main-story{
+    padding: 2em;
+}
+
+.main-img{
+    text-align: center;
+}
+
+.aside{
+    width: 40%;
+    border-style: groove;
+    overflow-wrap:wrap;
+}
+
+.st-body{
+    margin-top: 1.05em;
+}
+
+.heading{
+    margin-bottom: 1em;;
+    text-align: center;
+    color:#483A7C 
+}
+.tp-heading{
+    margin-top: 2em;;
+}
+.heading2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    font-weight: bold;
+}
+
+.aside > div{
+    padding: 1em;;
+}
+
+.st-footer{
+    display: flex;
+    margin-top:1.2em;
+    justify-content: space-between;
+    font-size: 0.7em;
+}
+
+.aside-icon{
+    width: 1.5em;
+}
+hr{
+    margin-bottom: 2em;
+}
+
+p:hover{
+    color: cadetblue;
+}
+
+a{
+    text-decoration: none;
+    color:#0798F6;  
+}
