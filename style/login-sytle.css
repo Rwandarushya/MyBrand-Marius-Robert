@@ -1,0 +1,58 @@
+
+.wrapper{   
+    width: 40vw;
+    height: 70vh;
+    background: url(../assets/images/back4.jpg);
+    background-position: center;
+    margin: auto;
+    margin-top: 4em;
+    box-shadow: 10px 5px 10px 2px #888888
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+
+.close{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+}
+#close{
+    width: 40px;
+    height: 40px;
+}
+
+#close:hover{
+transform: scale(1.2);
+}
+
+
+
+.field{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    width: 250px;
+    height: 30px;
+    margin:1.2em;
+    border-radius: 5px;
+}
+
+#login-btn{
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    border-radius: 5px;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,69,1) 43%, rgba(0,212,255,1) 100%);
+}
+
+p{
+    color: #fff;
+}

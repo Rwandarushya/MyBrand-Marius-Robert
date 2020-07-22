@@ -8,36 +8,41 @@
 </head>
 <body>
     <div class="wrapper">
-            <nav class="navbar">
-                <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
-                <div><a class="nav-link" href="../index.html">Home</a> </div>
-                <div><a class="nav-link" href="about.html"> About</a></div>
-                <div><a class="nav-link" href="">Portfolio</a> </div>
-                <div><a class="nav-link" href="contact.html">Contacts</a> </div>
-                <div><a class="nav-link" href="">Blogs</a> </div>
-                
-            </nav>
-        <div class="content">
-        <div class="aside">
+        <div class="container">
+            <div class="close"><a href="blog.html"><img id="close" src="../assets/icons/close.png"></a> </div>
+        <div >
             <h1>Keep in touch with me</h1>
-            <p>Sign up here for updates and info about <br>what am working on</p>
-            <hr/>
+            <p>Sign up here for updates and be able to write or <br>comment on my blog posts</p>
+            
         </div>
-        <div class="signup-area">
-            <div class="container">
-                <label>Firtname:</label><br>
-                <input type="text" class="field" name="" /><br>
-                <label>Lastname:</label><br>
-                <input type="text" class="field" name="" /><br>
-                <label>Email:</label><br>
-                <input type="email" class="field" name=""/><br>
-                <center><button class="btn-signup">Sign Up</button></center>
-            </div>
+        <div class="signup-form">
+                <div class="sm-container">
+                    <div>
+                        <label>Full Names:</label><br>
+                        <input type="text" class="field" name="" />
+                    </div>
+                    <div>
+                        <label>Email:</label><br>
+                        <input type="email" class="field" name=""/>
+                    </div>                   
+                    <div>
+                        <label>Password:</label><br>
+                        <input type="password" class="field" name=""/>
+                    </div>
+                    <div> 
+                        <label>Comfirm password:</label><br>
+                        <input type="password" class="field" name=""/>
+                    </div>                   
+                </div>                
         </div>
+        <div><button class="btn-signup">Sign Up</button></div>
+        <hr/>
+        <p id="small">Already have account?<a href="login.html">Login here</a></p>
+        </div>
+        
     </div>
-    <div class="footer"></div>
 
-    </div>
-    
+
+   
 </body>
 </html>
