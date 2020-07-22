@@ -3,18 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-body{
-    background: url(../assets/images/rectangle.svg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-}
-
 .wrapper{
-    height:100vh;    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
+
 .header{
     margin-top: 2rem;
 }
@@ -35,28 +27,44 @@ nav >div:first-child{
     color: black;
 }
 
-.signup-link{
-    background-color: #252526;
-    padding: 0.3em;
-    border-radius: 5px;
-    color: #fff;
+
+.profile{
+    width:15em;
+    height: 15rem;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px #E5E5E5;
 }
 
 .highlight{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    height: 70vh;
+    border-style: solid;
+    border-width:1px;
+}
+
+.left-side{
+    margin-top: 2em;
     display: flex;
-    width:70%;
-    height:70% ;
-    justify-content: center;
-    align-items:center;
+    padding: 2em;
 }
-
 .content{
-    margin:0 2em;
+    margin-left: 2em;
 }
 
+.right-side{
+    width: 50%;
+    
 
+}
 
+#right-img{
+    width: 100%;
+    height:100%;
+}
 .moreBtn{
+    margin-top: 2em;;
     width: 10em;
     height: 2em;
     border-radius: 5px;
@@ -68,20 +76,42 @@ nav >div:first-child{
     transform: scale(1.05);
 }
 
-.content >*{
-    margin-bottom: 1.5em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.back-img{
+    width: 100%;
 }
 
-.profile{
-    width:15em;
-    height: 15rem;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 10px #E5E5E5;
+.skills{
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
 }
 
+.skills >div{
+    border-style: solid;
+    border-width:1px;
+    padding: 2em;
+    box-shadow: 10px 5px 10px 2px #888888;
+}
+.skill-img{
+    width: 15em;
+    height: 10em;
+}
 
+.story{
+    padding: 2em;
+}
 
-/* --------------------------------------------------- contact syle--------------------------------------- */
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
 
+#about{
+    margin:auto;
+    margin-top: 2em;
+}
 
+#personality{
+    margin-top: 3em;
+    justify-content: center;
+    margin-bottom: 2em;
+}

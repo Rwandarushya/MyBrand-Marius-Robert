@@ -1,49 +1,46 @@
-
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
 .wrapper{
-    height:100vh;    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.contact_header{
-    display: flex;
-    background-color: #252526;
-    align-items: center;
-    flex-direction: column;
-}
-.navbar{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; 
-    margin-top: 2em;   
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-.navbar >div{ 
-    margin-left:3em;
+.header{
+    margin-top: 2rem;
+}
+nav{
+    display:flex;
+    justify-content: flex-start;
+}
+
+nav >div{  
+    margin:0 2em;
 }
 
 nav >div:first-child{
-    margin-right:20em;
+    margin-right:24em;
 }
 .nav-link{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
-.signup-link{
-    background-color: #2369AA;
-    padding: 0.5em;
-    border-radius: 5px;
-    color: #fff;
+.close{
+    margin-top: 2em;;
+    background-color:grey;
+    width:100%;
+    height:10px;
 }
+
+
 
 .title{
-    margin-top: 5em;
+    margin: auto;
+    margin-top: 1em;
     margin-bottom: 2em;
-    color:white;
+    color:#000;
 }
 
 .info > div{
