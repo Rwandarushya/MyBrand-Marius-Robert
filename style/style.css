@@ -39,9 +39,12 @@ nav >div:first-child{
     display:flex;
     justify-content: space-between;
     margin-top: 2em;
-    height: 70vh;
+    height: 80vh;
     border-style: solid;
     border-width:1px;
+}
+.greeting{
+    margin-bottom: 1.5em;
 }
 
 .left-side{
