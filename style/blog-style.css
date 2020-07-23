@@ -35,12 +35,11 @@
 
 .content-wrapper{
     display: flex;
-    width: 80vw;
-    height: 100vh;
-    background-color: #FBFCFE ;
+    width: 90vw;
     margin:auto;
+    padding: 2em;
     margin-top:2em;
-    box-shadow: 10px 5px 10px 2px #888888
+    box-shadow: 2px 2px 5px 2px #888888
 }
 .main-story{
     padding: 2em;
@@ -52,13 +51,22 @@
 
 .aside{
     width: 40%;
-    border-style: groove;
+    margin-right: 2em;
     overflow-wrap:wrap;
+}
+
+.tp-stories{
+    padding: 1.2em;
+    box-shadow: 10px 5px 10px 2px #888888;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    background-color:lightskyblue;
 }
 
 .st-body{
     margin-top: 1.05em;
 }
+
 
 .heading{
     margin-bottom: 1em;;
