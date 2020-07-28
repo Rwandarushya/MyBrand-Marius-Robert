@@ -142,6 +142,15 @@ form > input{
     body{
         overflow-x: hidden;
     }
+    .container{
+        width:80%;
+    }
+
+    .icon{
+        width: 30px;
+        height: 30px;
+        margin-top: 0.5em;
+    }
   
   .nav-links{
         position: absolute;

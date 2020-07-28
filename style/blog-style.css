@@ -141,6 +141,14 @@ a{
       overflow-x: hidden;
   }
 
+  .content-wrapper{
+      display: flex;
+      flex-direction: column;
+  }
+  .tp-stories{
+      width: 80vw;
+  }
+
 .nav-links{
       position: absolute;
       right: 0px;

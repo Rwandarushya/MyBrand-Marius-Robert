@@ -145,9 +145,18 @@ nav{
         width: 100vw; 
         height: auto;
     }
+    .left-side{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .right-side{
         width: 100vw;
         height: 70vh;
+    }
+    .back-img{
+        height: 60%;
     }
   
   .skills{
