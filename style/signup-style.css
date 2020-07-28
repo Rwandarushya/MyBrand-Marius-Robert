@@ -10,15 +10,19 @@
    display: flex;
    align-items: center;
    flex-direction: column;
-   font-family:  Verdana, Geneva, Tahoma, sans-serif;;
+   font-family:  Verdana, Geneva, Tahoma, sans-serif;
+   background-image: url(../assets/images/this2.jpg);
+    background-position: 0 70px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .container{
     display:flex;   
-   border-style:solid;
-   border-width: 1px;
    padding: 2em;
-   flex-wrap: wrap;;
+   flex-wrap: wrap;
+   border-radius: 5px;
+   box-shadow: 2px 2px 5px 2px #888888;
 }
 .signup-form{
     display: flex;
@@ -64,4 +68,11 @@
 #back-link{
     text-decoration: none;
 }
+
+@media screen and (max-width: 760px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    }
 
