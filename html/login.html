@@ -17,13 +17,13 @@
             <div class="signup-form">
                 <div>
                     <label>Email:</label><br>
-                    <input type="email" class="field" name=""/>
+                    <input type="email" class="field" name="" id="email"/>
                 </div>                   
                 <div>
                     <label>Password:</label><br>
-                    <input type="password" class="field" name=""/>
+                    <input type="password" class="field" name="" id="pass"/>
                 </div>
-                <div><button class="btn-signup">Login</div> 
+                <div><button class="btn-signup" onclick="login()">Login</div> 
              <center><p id="small">Don't have account?<a href="signup.html">Signup here</a></p></center>                 
             </div>
             <div class="right-side">
@@ -33,6 +33,10 @@
         </div>
         
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="../script/firebase.js"></script>
+    <script src="../script/login.js"></script>
 </body>
 </html>
