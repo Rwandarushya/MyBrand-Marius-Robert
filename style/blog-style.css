@@ -69,11 +69,10 @@ nav{
 .content > div{
     margin: 2em;
 }
-
-.category{
+.postList{
     display: flex;
-    justify-content: center;
 }
+
 .post{
     display: flex;
     flex-direction: column;
@@ -159,8 +158,7 @@ body{
     margin: auto;
 }
 
-.category{
-    display: flex;
+.postList{
     flex-direction: column;
 }
 
