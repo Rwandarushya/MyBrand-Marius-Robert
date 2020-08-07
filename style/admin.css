@@ -51,6 +51,9 @@
     margin-left: 4em;
     width:60%;
 }
+.create-post{
+    position: absolute;  
+}
 .btn-add{
     width: 10em;
     height: 2em;
@@ -90,4 +93,43 @@ a{
 
 .messages{
     display: none;
+}
+.create-post{
+    display: none;
+}
+
+.toolBar{
+    display: flex;
+}
+.toolBar >button{
+    width: 2em;
+
+}
+.form-elements> *{
+margin-top: 1.5em;
+}
+
+input, textarea{
+    width: 40vw;
+}
+
+.btn-publish{
+    margin: auto;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius:8px;
+    color: #fff;
+    background-color: #252526
+}
+
+@media screen and (max-width: 760px){
+    body{
+        background-color: teal;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
 }

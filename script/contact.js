@@ -1,5 +1,4 @@
 
-var db = firebase.firestore();
 
 document.getElementById('contactForm').addEventListener('submit',submitForm);
 
@@ -20,7 +19,6 @@ document.getElementById('contactForm').reset();
 function getFormValues(id){
 return document.getElementById(id).value;
 }
-
 
 // save message to firebase
 
