@@ -7,12 +7,28 @@
     <link rel="stylesheet" href="../style/signup-style.css">
 </head>
 <body>
-    <div class="back"><a id="back-link" href="blog.html"><h3>Back To Blog ></h3></a></div>
+    <section class="header">
+        <nav>
+            <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="../index.html">Home</a></li>
+                <li><a class="nav-link" href="../index.html"> About</a></li>
+                <li><a class="nav-link" href="">Portfolio</a></li>
+                <li><a class="nav-link" href="contact.html">Contacts</a></li>
+                <li><a class="nav-link" href="blog.html">Blogs</a></li>
+                <li><a class="nav-link" href="admin.html"><i class="fas fa-user-cog 2x"></i></a></li>
+
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </section>
     <div class="wrapper">
         <div >
-            <h1>Keep in touch with me</h1>
-            <p>Sign up here for updates and be able to write or <br>comment on my blog posts</p>
-            
+            <h3 style="margin: 1.5em;">Create Account here</h3>            
         </div>
         <div class="container">
             <form class="signup-form" id="signup-form">
@@ -48,5 +64,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
     <script src="../script/firebase.js"></script>
     <script src="../script/signup.js"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>

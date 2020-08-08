@@ -1,4 +1,3 @@
-var db = firebase.firestore();
 document.getElementById('signup-form').addEventListener('submit',(e)=>{
     e.preventDefault();
 

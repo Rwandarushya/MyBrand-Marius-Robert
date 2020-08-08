@@ -7,6 +7,7 @@
 .wrapper{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100vw;
+    margin-top: 2em;
 }
 nav{
     display:flex;
@@ -71,6 +72,13 @@ nav{
 }
 .postList{
     display: flex;
+}
+
+.read-post{
+    width: 60%;
+    background-color: whitesmoke;
+    position: absolute;
+    margin-top: 2em;
 }
 
 .post{
@@ -140,14 +148,44 @@ text-decoration: none;
     border-radius:5px;
 }
 
+.post_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: block;
+}
+.post_title{
+    text-align: center;
+}
+
+.post_wrapper > *{
+    margin-top: 2em;
+}
+.comment_form{
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea{
+    width: 50%;
+}
+
+textarea{
+    height: 30vh;
+}
+
 @media screen and (max-width: 760px){
+
+    .read-post{
+        width: 100%;
+    }   
 
 body{
     overflow-x: hidden;
 }
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
 }
 .left-side{

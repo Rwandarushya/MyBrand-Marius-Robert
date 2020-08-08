@@ -46,7 +46,27 @@
 
 .list >li{
     margin:2em;
+    list-style: none;
+    display: inline;
 }
+.list >li :hover{
+    border-style: solid;
+    border-color: teal;
+    border-width: 1px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 1.5em;
+}
+.active-li{
+    border-bottom: solid;
+    border-bottom-width: 2p;
+    border-bottom-color: teal;
+    box-sizing: content-box;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 1.5em;
+}
+
 .aside{
     margin-left: 4em;
     width:60%;
@@ -124,12 +144,29 @@ input, textarea{
 }
 
 @media screen and (max-width: 760px){
-    body{
-        background-color: teal;
-    }
+  
 
     .container{
         display: flex;
         flex-direction: column;
     }
+    .setting{
+        width: 100vw;
+        height: auto;
+    }
+    .setting-body{height: auto;}
+    .list{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .aside{
+        margin-top: 2em;
+        margin-left: 0;
+    }
+
+    input, textarea{
+        width: 80vw;
+    }
+
 }

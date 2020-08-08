@@ -1,7 +1,5 @@
 document.getElementById('comment-form').addEventListener('submit',submitForm);
 
-var db = firebase.firestore();
-
 function submitForm(e){
   e.preventDefault();
 var name=getFormValues('name');

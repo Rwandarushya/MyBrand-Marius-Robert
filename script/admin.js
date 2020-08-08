@@ -116,6 +116,9 @@ function messageRef(doc){
 
 function showPostTab(e){
     e.preventDefault();
+    document.getElementById('post-tab').setAttribute('class',"active-li");
+    document.getElementById('user-tab').classList.remove("active-li");
+    document.getElementById('message-tab').classList.remove("active-li");
     document.querySelector('.table-tab').style.display='block';
     document.querySelector('.posts').style.display='block';
     document.querySelector('.users').style.display='none';
@@ -125,6 +128,9 @@ function showPostTab(e){
 
 function showUserTab(e){
     e.preventDefault();
+    document.getElementById('user-tab').setAttribute('class',"active-li");
+    document.getElementById('post-tab').classList.remove("active-li");
+    document.getElementById('message-tab').classList.remove("active-li");
     document.querySelector('.table-tab').style.display='block';
     document.querySelector('.users').style.display='block';
     document.querySelector('.posts').style.display='none';
@@ -133,6 +139,9 @@ function showUserTab(e){
 }
 function showMessageTab(e){
     e.preventDefault();
+    document.getElementById('message-tab').setAttribute('class',"active-li");
+    document.getElementById('post-tab').classList.remove("active-li");
+    document.getElementById('user-tab').classList.remove("active-li");
     document.querySelector('.table-tab').style.display='block';
     document.querySelector('.messages').style.display='block';
     document.querySelector('.users').style.display='none';
@@ -193,3 +202,4 @@ function savePost(e){
     document.getElementById('form-post').reset();
     
 }
+
