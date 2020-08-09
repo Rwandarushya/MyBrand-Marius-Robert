@@ -1,6 +1,7 @@
 
 const postList=document.querySelector('.postList');
-
+checkUserState();
+function checkUserState(){
 firebase.auth().onAuthStateChanged(function(user) {
     let btn= document.getElementById('loginBtn');
     if (user) {
@@ -8,16 +9,14 @@ firebase.auth().onAuthStateChanged(function(user) {
       var user = firebase.auth().currentUser;
       if (user != null) {        
         btn.innerHTML="Log Out";
-        btn.id="logoutBtn";
         btn.addEventListener('click',logout);
       }
     } else {
       // No user is signed in.
       btn.innerHTML="Log in";
-      btn.id="loginBtn";
     }
   });
-
+}
 
 // refer to every document 
 function docRef(doc){
@@ -74,9 +73,11 @@ function openPost(doc){
   }
 
   document.querySelector('.content').style.display='none';
+  document.querySelector('.read-post').style.display='block';
   let wrapper=document.createElement('div');
   let heading=document.createElement('div');
   let title=document.createElement('h1');
+  let info=document.createElement('div');
   let author=document.createElement('p');
   let comment=document.createElement('p');
   let likes=document.createElement('p');
@@ -91,8 +92,18 @@ function openPost(doc){
   let emailLabel=document.createElement('label');
   let txtEmail=document.createElement('input');
   let btn=document.createElement('button');
- 
+  let close=document.createElement('i'); 
 
+  txtName.setAttribute('id','name');
+  txtEmail.setAttribute('id','email');
+  textarea.setAttribute('id', 'comment');
+
+  close.setAttribute('class', "fa fa-close");
+  close.addEventListener('click',()=>showAllPost());
+  btn.append('Send Comment');
+
+  btn.setAttribute('type','submit');
+  comment_form.addEventListener('submit',saveComment);
   txtLabel.append('Comment:');
   nameLabel.append('Names');
   emailLabel.append('Email');
@@ -101,10 +112,12 @@ function openPost(doc){
   likes.append('likes: '+doc.data().likes);
   comment.append('comments: '+doc.data().comments);
   
+  info.setAttribute('class', 'info');
+  info.appendChild(author);
+  info.appendChild(comment);
+  info.appendChild(likes);
   heading.appendChild(title);
-  heading.appendChild(author);
-  heading.appendChild(comment);
-  heading.appendChild(likes);
+  heading.appendChild(info);
 
   post_content.append(doc.data().body);
   body.appendChild(post_content);
@@ -125,29 +138,51 @@ function openPost(doc){
   heading.setAttribute('class', 'post_heading');
   title.setAttribute('class','post_title');
   body.setAttribute('class','post_body');
+  comment_section.setAttribute('class', 'comment_section');
   comment_form.setAttribute('class', 'comment_form');
   btn.setAttribute('class','comment_btn');
-
-
+ 
+  wrapper.appendChild(close);
   wrapper.appendChild(heading);
   wrapper.appendChild(body);
   wrapper.appendChild(comment_section);
-
-
-
-
-
-
+  checkUserState();
   postDiv.appendChild(wrapper);
+}
 
-
-
+function showAllPost(){
+  document.querySelector('.content').style.display='block';
+  document.querySelector('.read-post').style.display='none';
 }
 
 
-
-
-
+function saveComment(e){
+  e.preventDefault();
+  firebase.auth().onAuthStateChanged(function(user) {
+    let btn= document.getElementById('loginBtn');
+    if (user) {
+      // User is signed in.
+      let name=document.getElementById('name').value;
+      let email=document.getElementById('email').value;
+      let comment=document.getElementById('comment').value;
+      db.collection("comments").add({
+        name: name,
+        email: email,
+        comment: comment
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+    } else {
+      // No user is signed in.
+      window.alert('Sorry you can not comment on post! please Login')
+    }
+  });
+  
+}
 
 
 function logout(e){

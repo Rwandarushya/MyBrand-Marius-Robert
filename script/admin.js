@@ -69,7 +69,8 @@ function userRef(doc){
     icon.classList.add("fas", "fa-user-times");
 
     removeBtn.appendChild(icon);
-    removeBtn.addEventListener('click', deleteUser)
+    removeBtn.setAttribute('name',doc.id);
+    removeBtn.addEventListener('click', ()=>deleteUser(removeBtn.name));
     rem.appendChild(removeBtn);
 
     username.append(doc.data().username);
@@ -150,7 +151,7 @@ function showMessageTab(e){
 
 }
 
-function deleteUser(){
+function deleteUser(id){
     window.alert('user deleted');
 }
 
