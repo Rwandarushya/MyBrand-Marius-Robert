@@ -7,6 +7,7 @@
 .wrapper{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100vw;
+    margin-top: 2em;
 }
 nav{
     display:flex;
@@ -71,6 +72,17 @@ nav{
 }
 .postList{
     display: flex;
+    flex-wrap: wrap;
+}
+
+.read-post{
+    width: 60%;
+    background-color: whitesmoke;
+    position: absolute;
+    margin-top: 2em;
+}
+.read-post > *{
+    margin-left:2em;
 }
 
 .post{
@@ -78,9 +90,10 @@ nav{
     flex-direction: column;
     align-items: center;
     margin-right: 2em;
+    margin-bottom: 2em;
     border-radius: 5px;
    box-shadow: 2px 2px 5px 2px #888888;
-   width: 50%;
+   width: 45%;
 }
 img{
     width: 100%;
@@ -140,14 +153,65 @@ text-decoration: none;
     border-radius:5px;
 }
 
+.post_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: block;
+}
+.post_title{
+    text-align: center;
+}
+.info{
+    color: grey;
+    font-size: 0.8em;
+}
+
+.post_wrapper > *{
+    margin-top: 2em;
+}
+.comment_form{
+    display: flex;
+    flex-direction: column;
+}
+.comment_section{
+    display: block;
+}
+.comment_btn{
+    margin-top: 2em;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius:8px;
+    color: #fff;
+    background-color: #252526
+}
+
+input, textarea{
+    width: 50%;
+    border-radius: 5px;
+}
+
+input{
+    height: 2em;
+}
+
+textarea{
+    height: 30vh;
+}
+
 @media screen and (max-width: 760px){
+
+    .read-post{
+        width: 100%;
+    }   
 
 body{
     overflow-x: hidden;
 }
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
 }
 .left-side{
@@ -166,6 +230,11 @@ body{
     width: 90%;
     margin: 2em;
 }
+input, textarea{
+    width: 80%;
+}
+
+
 
 .nav-links{
       position: absolute;
@@ -178,6 +247,7 @@ body{
       align-items: center;
       transform: translateX(100%);
       transition: transform 0.5s ease-in  ;
+      z-index: 2;
   }
 
  .nav-links li{

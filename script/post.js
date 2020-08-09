@@ -1,17 +1,11 @@
 document.getElementById('comment-form').addEventListener('submit',submitForm);
 
-var db = firebase.firestore();
-
 function submitForm(e){
   e.preventDefault();
 var name=getFormValues('name');
 var email=getFormValues('email');
 var message=getFormValues('comment-txt');
 saveMessage(name,email,message);
-// document.querySelector('.alert').style.display='block';
-// setTimeout(function(){
-//     document.querySelector('.alert').style.display='none'; 
-// },3000);
 document.getElementById('comment-form').reset();
 }
 

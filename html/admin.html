@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <script src="https://kit.fontawesome.com/f8a58fa297.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style/admin.css">
 </head>
 <body>
     <div class="wrapper">
         <section class="header">
-            <div><a class="nav-link name" href=""><h2>Marius Robert</h2></a> </div>
-            <div><img src="">admin name </div>
+            <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+            <div></div>
         </section>
         <section class="container">
             <div class="setting">
@@ -19,15 +20,16 @@
                 </div>
                 <div class="setting-body">
                     <ul class="list">
-                        <li><a href="" >Manage Posts</a> </li>
-                        <li><a href="" id="post-tab">Manage Users</a> </li>
+                        <li><a href="" id="post-tab" >Manage Posts</a> </li>
+                        <li><a href="" id="user-tab">Manage Users</a> </li>
                         <li><a href="" id="message-tab">Manage Messages</a> </li>
                     </ul>
                 </div>
             </div>
             <div class="aside">
+            <div class="table-tab">
             <div class="posts">
-                <button class="btn-add">Add post</button>
+                <button class="btn-add" onclick="addPost()">Add post</button>
                 <table>
                     <thead>
                         <th>No</th>
@@ -35,22 +37,21 @@
                         <th>Author</th>
                         <th colspan="2">actions</th>
                     </thead>
-                    <tbody>
+                    <tbody class="table-post">
 
                     </tbody>
                 </table>
             </div>
             <div class="users">
-                <button class="btn-add">Add User</button>
                 <table>
                     <thead>
                         <th>No</th>
                         <th>UserName</th>
+                        <th>Email</th>
                         <th>password</th>
-                        <th colspan="2">actions</th>
+                        <th colspan="2">Remove User</th>
                     </thead>
-                    <tbody>
-
+                    <tbody class="user-table">
                     </tbody>
                 </table>
             </div>
@@ -61,17 +62,64 @@
                         <th>Names</th>
                         <th>Email</th>
                         <th>Message</th>
-                        <th colspan="2">actions</th>
+                        <th >Delete Message</th>
                     </thead>
-                    <tbody>
+                    <tbody class="table-msg">
 
                     </tbody>
                 </table>
             </div>
-            
         </div>
+        <div class="create-post">
+           <div class="post-head">
+               <h3>Create new Post</h3>
+               <form action="" class="form-post" id="form-post">
+                   <div class="form-elements">
+                    <div><label for="">Post Category:</label><br> 
+                        <select name="" id="cate">
+                            <option value="Web Technology">Web Technology</option>
+                            <option value="Digital marketing">Digital marketing</option>
+                            <option value="Cyber security">Cyber security</option>
+                            <option value="Others">Others..</option>
+                        </select>
+                   </div>
+                   <div><label for="">Post title:</label><br>
+                    <input type="text" id="tit" required>
+                    </div>
+                   <div>                    
+                    <label for="">Post body:</label><br>
+                    <div class="toolBar">
+                        <button><i class="fas fa-undo"></i></button>
+                        <button><i class="fas fa-redo"></i></button>
+                        <button><b>B</b> </button>
+                        <button><i>i</i></button>
+                        <button> <u>u</u> </button>
+                        <button><i class="fas fa-list-ul"></i></button>
+                        <button><i class="far fa-image"></i></button>
+                        <select name="" id="">
+                            <option value="">12</option>
+                            <option value="">18</option>
+                            <option value="">24</option>
+                            <option value="">28</option>
+                            <option value="">30</option>
+                        </select>
+                    </div>
+                    <textarea name="" id="content" cols="30" rows="10" required>
+                    </textarea>
+                   </div>  
+                   <button class="btn-publish" type="submit"> Publish Post</button>            
+               </form>
+           </div>
+           <div class="post-body"></div>
+        </div>
+        </div>
+        
         </section>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="../script/firebase.js"></script>
     <script src="../script/admin.js"></script>
 </body>
 </html>

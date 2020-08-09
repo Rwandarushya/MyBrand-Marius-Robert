@@ -1,4 +1,3 @@
-var db = firebase.firestore();
 document.getElementById('signup-form').addEventListener('submit',(e)=>{
     e.preventDefault();
 
@@ -17,9 +16,7 @@ document.getElementById('signup-form').addEventListener('submit',(e)=>{
           email: email,
           password:pass
       })
-   }).then(()=>{
-
-   }).catch(function(error) {
+   }).then(()=>window.location.href="../html/blog.html").catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;

@@ -1,14 +1,4 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var user = firebase.auth().currentUser;
-      if (user != null) {
-        console.log(user.email);
-      }
-    } else {
-      // No user is signed in.
-    }
-  });
+
 
 function login(){
     useremail=document.getElementById('email').value;
@@ -19,13 +9,19 @@ function login(){
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
+        window.alert(errorMessage);
       });
+  firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var user = firebase.auth().currentUser;
+            if (user != null) {
+              console.log(user.email);
+              window.location.href='../html/blog.html';
+            }
+          } else {
+            // No user is signed in.
+          }
+        });
 }
 
-function logout(){
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-      }).catch(function(error) {
-        // An error happened.
-      });
-}
