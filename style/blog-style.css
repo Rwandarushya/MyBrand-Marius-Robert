@@ -75,14 +75,28 @@ nav{
     flex-wrap: wrap;
 }
 
+.previous_comments  {
+   margin-top: 1em;
+}
+
+.sender{
+    margin-top: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color:teal;
+    border-radius: 5px;
+    width: 50%;
+}
+
 .read-post{
-    width: 60%;
+    width: 68%;
     background-color: whitesmoke;
     position: absolute;
     margin-top: 2em;
 }
 .read-post > *{
     margin-left:2em;
+    margin-right: 2em;
 }
 
 .post{

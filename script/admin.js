@@ -186,16 +186,18 @@ function savePost(e){
     let category=document.getElementById('cate').value;
     let title=document.getElementById('tit').value;
     let content=document.getElementById('content').value;
+    let author=document.getElementById('author').value;
     db.collection("posts").add({
-        author:"Admin",
+        author:author,
         category: category,
         title: title,
         body: content,
-        likes:0,
-        comments:0
+        likes:[],
+        comments:[]
     })
     .then(function(docRef) {
-         window.alert("Document written with ID: ", docRef.id);
+         window.alert("Post publishe successfuly!");
+         location.reload();
     })
     .catch(function(error) {
         window.alert("Error adding document: ", error);

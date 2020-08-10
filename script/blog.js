@@ -33,7 +33,7 @@ function docRef(doc){
     post.classList.add('post')
     img.src="../assets/images/macbook-pro.png";
     h4.append(doc.data().title);
-    p.append('comment:'+doc.data().comments);
+    p.append('comment:'+doc.data().comments.length);
     author.append(doc.data().author);
 
 
@@ -44,6 +44,7 @@ function docRef(doc){
     footer.appendChild(h4);
     footer.appendChild(p);
     footer.appendChild(author);
+    post.addEventListener('click',()=> openPost(doc))
     postList.appendChild(post);
 }
 
@@ -83,6 +84,9 @@ function openPost(doc){
   let likes=document.createElement('p');
   let body=document.createElement('div');
   let post_content=document.createElement('p');
+  let line=document.createElement('hr');
+  let comment_title=document.createElement('h3');
+  let previous_comments=document.createElement('div');
   let comment_section=document.createElement('div');
   let comment_form=document.createElement('form');
   let txtLabel=document.createElement('label');
@@ -93,6 +97,11 @@ function openPost(doc){
   let txtEmail=document.createElement('input');
   let btn=document.createElement('button');
   let close=document.createElement('i'); 
+  
+  comment_title.setAttribute('class',comment_title);
+  comment_title.append("comments:");
+
+
 
   txtName.setAttribute('id','name');
   txtEmail.setAttribute('id','email');
@@ -102,15 +111,14 @@ function openPost(doc){
   close.addEventListener('click',()=>showAllPost());
   btn.append('Send Comment');
 
-  btn.setAttribute('type','submit');
-  comment_form.addEventListener('submit',saveComment);
+  btn.setAttribute('type','button');
   txtLabel.append('Comment:');
   nameLabel.append('Names');
   emailLabel.append('Email');
   title.append(doc.data().title);
   author.append('written by: '+doc.data().author);
   likes.append('likes: '+doc.data().likes);
-  comment.append('comments: '+doc.data().comments);
+  comment.append('comments: '+doc.data().comments.length);
   
   info.setAttribute('class', 'info');
   info.appendChild(author);
@@ -121,6 +129,8 @@ function openPost(doc){
 
   post_content.append(doc.data().body);
   body.appendChild(post_content);
+
+
 
   comment_form.appendChild(txtLabel);
   comment_form.appendChild(textarea);
@@ -133,21 +143,46 @@ function openPost(doc){
   comment_section.appendChild(comment_form);
 
 
+
   // adding classes to the elements
   wrapper.setAttribute('class', 'post_wrapper');
   heading.setAttribute('class', 'post_heading');
   title.setAttribute('class','post_title');
   body.setAttribute('class','post_body');
+  previous_comments.setAttribute('class','previous_comments');
   comment_section.setAttribute('class', 'comment_section');
   comment_form.setAttribute('class', 'comment_form');
   btn.setAttribute('class','comment_btn');
+  btn.addEventListener('click',()=>saveComment(doc));
  
   wrapper.appendChild(close);
   wrapper.appendChild(heading);
   wrapper.appendChild(body);
+  wrapper.appendChild(line);
+  wrapper.appendChild(comment_title);
+
+  var ar=doc.data().comments;
+  count= doc.data().comments.length;
+  for(i=0;i<count;i++){
+    let nm=document.createElement('h4');
+    nm.setAttribute('class','sender');
+    let cm=document.createElement('p');
+    let first=document.createElement('div');
+    let sec=document.createElement('div');
+    nm.append(ar[i].Names+':');
+    cm.append(ar[i].comment);
+    first.append(nm);
+    sec.append(cm)    
+    previous_comments.append(first);
+    previous_comments.appendChild(sec);
+  }  
+  wrapper.appendChild(previous_comments);
   wrapper.appendChild(comment_section);
   checkUserState();
   postDiv.appendChild(wrapper);
+
+  
+
 }
 
 function showAllPost(){
@@ -156,8 +191,7 @@ function showAllPost(){
 }
 
 
-function saveComment(e){
-  e.preventDefault();
+function saveComment(doc){
   firebase.auth().onAuthStateChanged(function(user) {
     let btn= document.getElementById('loginBtn');
     if (user) {
@@ -165,23 +199,21 @@ function saveComment(e){
       let name=document.getElementById('name').value;
       let email=document.getElementById('email').value;
       let comment=document.getElementById('comment').value;
-      db.collection("comments").add({
-        name: name,
-        email: email,
-        comment: comment
-    })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+      db.collection("posts").doc(doc.id).update( {comments: firebase.firestore.FieldValue.arrayUnion({Names:name,email:email, comment:comment})})
+      .then(function(docRef) {
+          window.alert('Comment sent');
+          location.reload();
+      })
+      .catch(function(error) {
+         var message_error=error.message_error;
+         window.alert(message_error);
+      });
     } else {
       // No user is signed in.
       window.alert('Sorry you can not comment on post! please Login')
     }
   });
-  
+    
 }
 
 
@@ -194,3 +226,4 @@ function logout(e){
         // An error happened.
       });
 }
+
