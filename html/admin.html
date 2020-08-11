@@ -8,10 +8,23 @@
     <link rel="stylesheet" href="../style/admin.css">
 </head>
 <body>
+    <nav>
+        <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+        <ul class="nav-links">
+            <li><a class="nav-link" href="../index.html">Home</a></li>
+            <li><a class="nav-link" href="../index.html"> About</a></li>
+            <li><a class="nav-link" href="">Portfolio</a></li>
+            <li><a class="nav-link" href="#">Contacts</a></li>
+            <li><a class="nav-link" href="blog.html">Blogs</a></li>
+            </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
     <div class="wrapper">
         <section class="header">
-            <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
-            <div></div>
         </section>
         <section class="container">
             <div class="setting">
@@ -20,42 +33,37 @@
                 </div>
                 <div class="setting-body">
                     <ul class="list">
-                        <li><a href="" id="post-tab" >Manage Posts</a> </li>
-                        <li><a href="" id="user-tab">Manage Users</a> </li>
-                        <li><a href="" id="message-tab">Manage Messages</a> </li>
+                        <li><a href="#posts" id="post-section" >Manage Posts</a> </li>
+                        <li><a href="#users" id="user-section">Manage Users</a> </li>
+                        <li><a href="#messages" id="message-section">Manage Messages</a> </li>
                     </ul>
                 </div>
             </div>
+            <div class="content">
             <div class="aside">
-            <div class="table-tab">
-            <div class="posts">
-                <button class="btn-add" onclick="addPost()">Add post</button>
-                <table>
-                    <thead>
-                        <th>No</th>
-                        <th>Tittle</th>
-                        <th>Author</th>
-                        <th colspan="2">actions</th>
-                    </thead>
-                    <tbody class="table-post">
+            <section class="post_section" id="posts">
+                <h2>Blog Posts</h2>
+                <div class="createBtn"><button class="btn-add" onclick="addPost()">Create New post</button></div>
+                <div class="postList">
 
-                    </tbody>
-                </table>
-            </div>
-            <div class="users">
+                </div>
+            </section>
+            <section class="users" id="users">
+                <h2>users</h2>
                 <table>
                     <thead>
                         <th>No</th>
                         <th>UserName</th>
                         <th>Email</th>
-                        <th>password</th>
-                        <th colspan="2">Remove User</th>
+                        <th>role</th>
+                        <th colspan="2">Priveleges</th>
                     </thead>
                     <tbody class="user-table">
                     </tbody>
                 </table>
-            </div>
-            <div class="messages">
+            </section>
+            <section class="messages" id="messages">
+                <h2>Messages</h2>
                 <table>
                     <thead>
                         <th>No</th>
@@ -68,11 +76,14 @@
 
                     </tbody>
                 </table>
-            </div>
+            </section>
         </div>
         <div class="create-post">
            <div class="post-head">
-               <h3>Create new Post</h3>
+               <div class="create_post_header">
+                   <h3>Create new Post</h3>
+                   <div><button class="closeBtn" onclick="hideCreatePost()" style="color:rgb(53, 53, 114);"><i class="fas fa-times-circle fa-3x"></i></button></div>
+                </div>               
                <form action="" class="form-post" id="form-post">
                    <div class="form-elements">
                     <div><label for="">Post Category:</label><br> 
@@ -110,11 +121,12 @@
                     <textarea name="" id="content" cols="30" rows="10" required>
                     </textarea>
                    </div>  
-                   <button class="btn-publish" type="submit"> Publish Post</button>            
+                   <button class="btn-publish" id="btn-publish" type="submit"> Publish Post</button>            
                </form>
            </div>
            <div class="post-body"></div>
         </div>
+    </div>
         </div>
         
         </section>
@@ -124,5 +136,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
     <script src="../script/firebase.js"></script>
     <script src="../script/admin.js"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>

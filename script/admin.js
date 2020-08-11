@@ -1,7 +1,6 @@
-document.getElementById('post-tab').addEventListener('click',showPostTab);
-document.getElementById('user-tab').addEventListener('click',showUserTab);
-document.getElementById('message-tab').addEventListener('click',showMessageTab);
-const postList=document.querySelector('.table-post');
+
+
+const postList=document.querySelector('.postList');
 const usertList=document.querySelector('.user-table');
 const messageList=document.querySelector('.table-msg');
 
@@ -24,64 +23,84 @@ const Contacts=db.collection('contacts').get().then((snapshot)=>{
 });
 
 function postRef(doc){
-    let tr= document.createElement('tr');
-    let no=document.createElement('td');
-    let title=document.createElement('td');
-    let author=document.createElement('td');
-    let edit=document.createElement('td');
-    let del= document.createElement('td');
-    let editBtn=document.createElement('button');
-    let deleteBtn=document.createElement('button');
-    let edit_icon=document.createElement('i');
-    let del_icon=document.createElement('i');
+        let content= document.createElement('div');
+        let title=document.createElement('div');
+        let action=document.createElement('div');
+        let h1= document.createElement('h1');
+        let post=document.createElement('div');
+        let img=document.createElement('img');
+        let footer=document.createElement('div');
+        let h4=document.createElement('h4');
+        let p=document.createElement('p');
+        let author=document.createElement('a');
+        let removeBtn=document.createElement('button');
+        let editBtn=document.createElement('button');
+        let edit_icon=document.createElement('i');
+        let icon=document.createElement('i');
+         icon.classList.add("fas", "fa-trash-alt");
+         edit_icon.classList.add("fas", "fa-edit");
 
-    edit_icon.classList.add("far", "fa-edit");
-    del_icon.classList.add("fas", "fa-trash-alt");
+        removeBtn.appendChild(icon);
+        editBtn.appendChild(edit_icon);
+        editBtn.setAttribute('name',doc.id);
+        editBtn.setAttribute('class','editBtn');
+        removeBtn.setAttribute('name',doc.id);
+        removeBtn.setAttribute('class','removeBtn');
+        removeBtn.addEventListener('click', ()=>deletePost(removeBtn.name));
+        editBtn.addEventListener('click', ()=>editPost(editBtn.name));
+        action.appendChild(removeBtn);
+        action.appendChild(editBtn);
+        action.classList.add('action_div');
+        post.classList.add('post')
+        img.src="../assets/images/macbook-pro.png";
+        h4.append(doc.data().title);
+        p.append('comment:'+doc.data().comments.length);
+        author.append('Author: '+doc.data().author);
 
-    editBtn.appendChild(edit_icon);
-    deleteBtn.setAttribute('name', doc.id);
-    deleteBtn.addEventListener('click', ()=>deletePost(deleteBtn.name));
-    deleteBtn.appendChild(del_icon);
-    editBtn.addEventListener('click', deletePost);
-    edit.appendChild(editBtn);
-    del.appendChild(deleteBtn);
-    title.append(doc.data().title);
-    author.append(doc.data().author);
-    edit.append()
+        author.classList.add("info");
+        p.classList.add("info");
+        
+        content.appendChild(title);
+        post.appendChild(img);
+        post.appendChild(footer);
+        footer.appendChild(action);
+        footer.appendChild(h4);
+        footer.appendChild(p);
+        footer.appendChild(author);
+        postList.appendChild(post);
+    }
 
-    tr.appendChild(no);
-    tr.appendChild(title);
-    tr.appendChild(author);
-    tr.appendChild(edit);
-    tr.appendChild(del);
-    postList.appendChild(tr);
-}
 
 function userRef(doc){
     let tr=document.createElement('tr');
     let no=document.createElement('td');
     let username=document.createElement('td');
     let email=document.createElement('td');
-    let password=document.createElement('td');
-    let rem=document.createElement('td');
-    let removeBtn=document.createElement('button');
-    let icon=document.createElement('i');
-    icon.classList.add("fas", "fa-user-times");
+    let role=document.createElement('td');
+    let prev=document.createElement('td');
+    let btnDiv=document.createElement('div');
+    let adminBtn=document.createElement('button');
+    let guestBtn=document.createElement('button');
+    adminBtn.innerHTML="Admin";
+    guestBtn.innerHTML="Guest";
+    btnDiv.appendChild(adminBtn);
+    btnDiv.appendChild(guestBtn);
+    btnDiv.setAttribute('class','privelegesBtnDiv');
+ 
 
-    removeBtn.appendChild(icon);
-    removeBtn.setAttribute('name',doc.id);
-    removeBtn.addEventListener('click', ()=>deleteUser(removeBtn.name));
-    rem.appendChild(removeBtn);
+
+  
+    prev.appendChild(btnDiv);
 
     username.append(doc.data().username);
     email.append(doc.data().email);
-    password.append(doc.data().password);
+    role.append(doc.data().role);
 
     tr.appendChild(no);
     tr.appendChild(username);
     tr.appendChild(email);
-    tr.appendChild(password);
-    tr.appendChild(rem);
+    tr.appendChild(role);
+    tr.appendChild(prev);
     usertList.appendChild(tr);
 }
 
@@ -99,6 +118,7 @@ function messageRef(doc){
     removeBtn.setAttribute('name',doc.id);
     removeBtn.appendChild(icon);
     rem.appendChild(removeBtn);
+    removeBtn.setAttribute('class','beleteBtn');
     removeBtn.addEventListener('click',() => deleteMessage(removeBtn.name));
 
     name.append(doc.data().name);
@@ -115,40 +135,24 @@ function messageRef(doc){
 
 
 
-function showPostTab(e){
+function showPostSection(e){
     e.preventDefault();
-    document.getElementById('post-tab').setAttribute('class',"active-li");
-    document.getElementById('user-tab').classList.remove("active-li");
-    document.getElementById('message-tab').classList.remove("active-li");
-    document.querySelector('.table-tab').style.display='block';
-    document.querySelector('.posts').style.display='block';
-    document.querySelector('.users').style.display='none';
-    document.querySelector('.messages').style.display='none';
-    document.querySelector('.create-post').style.display='none';
+    document.getElementById('post-section').setAttribute('class',"active-li");
+    document.getElementById('user-section').classList.remove("active-li");
+    document.getElementById('message-section').classList.remove("active-li");
 }
 
-function showUserTab(e){
+function showUserSection(e){
     e.preventDefault();
-    document.getElementById('user-tab').setAttribute('class',"active-li");
-    document.getElementById('post-tab').classList.remove("active-li");
-    document.getElementById('message-tab').classList.remove("active-li");
-    document.querySelector('.table-tab').style.display='block';
-    document.querySelector('.users').style.display='block';
-    document.querySelector('.posts').style.display='none';
-    document.querySelector('.messages').style.display='none';
-    document.querySelector('.create-post').style.display='none';
+    document.getElementById('user-section').setAttribute('class',"active-li");
+    document.getElementById('post-section').classList.remove("active-li");
+    document.getElementById('message-section').classList.remove("active-li");
 }
-function showMessageTab(e){
+function showMessageSection(e){
     e.preventDefault();
-    document.getElementById('message-tab').setAttribute('class',"active-li");
-    document.getElementById('post-tab').classList.remove("active-li");
-    document.getElementById('user-tab').classList.remove("active-li");
-    document.querySelector('.table-tab').style.display='block';
-    document.querySelector('.messages').style.display='block';
-    document.querySelector('.users').style.display='none';
-    document.querySelector('.posts').style.display='none';
-    document.querySelector('.create-post').style.display='none';
-
+    document.getElementById('message-section').setAttribute('class',"active-li");
+    document.getElementById('post-section').classList.remove("active-li");
+    document.getElementById('user-section').classList.remove("active-li");
 }
 
 function deleteUser(id){
@@ -173,11 +177,69 @@ function deletePost(id){
     });
 }
 
+function editPost(id){
+    addPost();
+    var edit_form=document.getElementById('form-post');
+    let tit=document.getElementById('tit');
+    let author=document.getElementById('author');
+    let body=document.getElementById('content');
+    let btn=document.getElementById('btn-publish');
+    btn.setAttribute('class','btn-publish'); 
+    var docRef = db.collection("posts").doc(id);
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            tit.value=doc.data().title;
+            author.value=doc.data().author;
+            body.value=(doc.data().body);
+            btn.innerHTML="Update Post";
+            btn.removeEventListener('click',savePost);
+            btn.addEventListener('click',()=>updatepost(id));
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+    edit_form.appendChild(btn);
+    
+}
+
+function updatepost(id){
+    let cate=document.getElementById('cate');
+    let tit=document.getElementById('tit');
+    let author=document.getElementById('author');
+    let body=document.getElementById('content');
+
+// Set the new  field of the post'
+db.collection("posts").doc(id).update({
+    "category":cate.value,
+    "title":tit.value,
+    "author": author.value,
+    "body":body.value,
+})
+.then(function() {
+    window.alert("Post successfully updated!");
+    location.reload();
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});
+location.reload();
+}
+
 
 
 function addPost(){
     document.querySelector('.create-post').style.display='block';
-    document.querySelector('.table-tab').style.display='none';
+    document.querySelector('.aside').style.display='none';
+}
+
+function hideCreatePost(){
+    document.querySelector('.create-post').style.display='none';
+    document.querySelector('.aside').style.display='block';
 }
 
 document.getElementById('form-post').addEventListener('submit',savePost);

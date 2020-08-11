@@ -34,9 +34,10 @@ function docRef(doc){
     img.src="../assets/images/macbook-pro.png";
     h4.append(doc.data().title);
     p.append('comment:'+doc.data().comments.length);
-    author.append(doc.data().author);
+    author.append('Author: '+doc.data().author);
 
-
+  p.setAttribute('class','info');
+  author.setAttribute('class', 'info');
   
     content.appendChild(title);
     post.appendChild(img);

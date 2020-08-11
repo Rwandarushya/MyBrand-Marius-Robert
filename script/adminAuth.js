@@ -1,19 +1,30 @@
 
 function adminLogin(){
 
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-    
-        console.log('works');
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var user = firebase.auth().currentUser;
+      if (user != null) {
+        var userId=user.uid;
+  
+        var userCollection = db.collection("users").doc(userId);
+        userCollection.get().then(function(doc) {
+            if (doc.data().role=='admin') {
+                window.location.href='../html/admin.html';
+            } else {
+                // doc.data() will be undefined in this case
+                window.alert("Not admin!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+        
+      }
+    } else {
+      // No user is signed in.
+      window.alert("Sorry you are not logged in!");
+    }
   });
 }
 
