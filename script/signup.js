@@ -14,7 +14,8 @@ document.getElementById('signup-form').addEventListener('submit',(e)=>{
       return db.collection('users').doc(cred.user.uid).set({
           username:username,
           email: email,
-          password:pass
+          password:pass,
+          role:guest
       })
    }).then(()=>window.location.href="../html/blog.html").catch(function(error) {
     // Handle Errors here.
