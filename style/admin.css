@@ -127,6 +127,10 @@ nav{
     display: flex;
     flex-direction: column;
 }
+
+section{
+    margin-bottom: 3em;
+}
 .create-post{
     margin-left:4em; 
 }
