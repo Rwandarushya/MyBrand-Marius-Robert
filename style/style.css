@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .wrapper{
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: 'Raleway', sans-serif;
 }
 
 .header{
@@ -65,6 +65,7 @@ nav{
 }
 .greeting{
     margin-bottom: 1.5em;
+    font-family: 'Mulish', sans-serif;
 }
 
 .left-side{
