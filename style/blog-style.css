@@ -93,6 +93,8 @@ nav{
     background-color: whitesmoke;
     position: absolute;
     margin-top: 2em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 2px #888888;
 }
 .read-post > *{
     margin-left:2em;
@@ -129,7 +131,7 @@ text-decoration: none;
 }
 
 #recent-title{
-    background-color: #252526;
+    background-color: #76D7C4;
     color: white;
     margin-top: 2em;
     padding: 1.2em;

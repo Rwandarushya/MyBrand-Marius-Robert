@@ -80,9 +80,9 @@ nav{
 .setting-head{
     display: flex;
     width: 100%;
-    background-color: #252526;
+    background-color: #76D7C4;
     color:white;
-    height:2em;
+    height:4em;
     justify-content: center;
     align-items: center;
 }
@@ -193,11 +193,12 @@ img{
 
 table{
     margin-top: 2em;
+    width: 100%;
 }
 
 th{
-    height: 2em;
-    background-color:#859bc9 ;
+    height: 3em;
+    background-color:#48C9B0 ;
     color: white;
 }
 td{
@@ -305,7 +306,7 @@ input, textarea{
     }
     
     .post{
-        width: 100vw;
+        width: 90vw;
     margin-top: 1em;
     margin-right: 0;
     border-style: solid;
