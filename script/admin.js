@@ -81,13 +81,21 @@ function userRef(doc){
     let btnDiv=document.createElement('div');
     let adminBtn=document.createElement('button');
     let guestBtn=document.createElement('button');
+    adminBtn.setAttribute('name',doc.id);
+    adminBtn.addEventListener('click',()=>makeUserAdmin(doc.id));
+    guestBtn.addEventListener('click', ()=>makeUserGuest(doc.id));
+    guestBtn.setAttribute('name',doc.id);
     adminBtn.innerHTML="Admin";
     guestBtn.innerHTML="Guest";
     btnDiv.appendChild(adminBtn);
     btnDiv.appendChild(guestBtn);
     btnDiv.setAttribute('class','privelegesBtnDiv');
- 
-
+    if(doc.data().role=='admin'){
+        adminBtn.disabled=true;
+    }
+    else{
+        guestBtn.disabled=true;
+    }
 
   
     prev.appendChild(btnDiv);
@@ -266,5 +274,39 @@ function savePost(e){
     });
     document.getElementById('form-post').reset();
     
+}
+
+function makeUserAdmin(docId){
+    var userRef = db.collection("users").doc(docId);
+
+// Set the "users" field 
+return userRef.update({
+    role: "admin"
+})
+.then(function() {
+    window.alert("User priviledges successfully updated!");
+    location.reload();
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error updating users: ", error);
+});
+}
+
+
+function makeUserGuest(docId){
+    var userRef = db.collection("users").doc(docId);
+ // Set the "users" field 
+return userRef.update({
+    role: "guest"
+})
+.then(function() {
+    window.alert("User priviledges successfully updated!");
+    location.reload();
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error updating users: ", error);
+});   
 }
 
