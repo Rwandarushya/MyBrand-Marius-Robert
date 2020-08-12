@@ -109,6 +109,7 @@ nav{
     border-radius: 5px;
    box-shadow: 2px 2px 5px 2px #888888;
    width: 45%;
+   padding: 1em;
 }
 img{
     width: 100%;
