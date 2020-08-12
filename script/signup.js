@@ -15,7 +15,7 @@ document.getElementById('signup-form').addEventListener('submit',(e)=>{
           username:username,
           email: email,
           password:pass,
-          role:guest
+          role:"guest"
       })
    }).then(()=>window.location.href="../html/blog.html").catch(function(error) {
     // Handle Errors here.
