@@ -5,7 +5,7 @@
 }
 
 .wrapper{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Raleway', sans-serif;
     width: 100vw;
     margin-top: 2em;
 }
@@ -97,6 +97,7 @@ nav{
 .read-post > *{
     margin-left:2em;
     margin-right: 2em;
+    font-family:'Mulish', sans-serif;
 }
 
 .post{
