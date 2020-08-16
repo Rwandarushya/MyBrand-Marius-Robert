@@ -196,6 +196,7 @@ text-decoration: none;
 .comment_section{
     display: block;
 }
+
 .comment_btn{
     margin-top: 2em;
     font-weight: bold;
@@ -209,6 +210,7 @@ text-decoration: none;
 input, textarea{
     width: 50%;
     border-radius: 5px;
+    padding-left: 10px;
 }
 
 input{
