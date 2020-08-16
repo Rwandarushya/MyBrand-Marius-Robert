@@ -103,6 +103,7 @@ form > input{
     border-width: 1px;
     border-radius: 5px;
     border-color: grey;
+    padding-left: 10px;
 }
 textarea{
     width:100%;
@@ -111,6 +112,7 @@ textarea{
     border-width: 1px;
     border-radius: 5px;
     border-color: grey;
+    padding-left: 10px;
 }
 
 .message{

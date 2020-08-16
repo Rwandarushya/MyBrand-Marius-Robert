@@ -256,6 +256,12 @@ margin-top: 1.5em;
 
 input, textarea{
     width: 40vw;
+    border-radius:5px;
+    padding-left: 10px;
+}
+
+input{
+    height: 2.5em;
 }
 
 .btn-publish{

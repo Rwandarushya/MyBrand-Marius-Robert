@@ -82,6 +82,7 @@ nav{
     height: 2.5em;
     width: 25em;
     border-radius:5px;
+    padding-left: 10px;
 }
 
 .btn-signup{

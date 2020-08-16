@@ -169,6 +169,7 @@ text-decoration: none;
     height: 2.5em;
     width: 70%;
     border-radius:5px;
+    padding-left: 10px;
 }
 
 .post_wrapper{
