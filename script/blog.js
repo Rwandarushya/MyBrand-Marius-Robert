@@ -217,7 +217,6 @@ function saveComment(doc){
     
 }
 
-
 function logout(e){
     e.preventDefault();
     firebase.auth().signOut().then(function() {
