@@ -164,45 +164,52 @@ h2,.skills{
     margin-bottom: 2em;
 }
 
-
-.parent { width: 250px; height:125px;}
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    font-size: 20px;
-    left: 0px;
-    top: 0px;
-    position:absolute;
-    -webkit-transition-property: width height background-color font-size left top transform -webkit-transform color;
-    -webkit-transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-in-out;
-    transition-property: width height background-color font-size left top transform -webkit-transform color;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in-out;
+@keyframes swap{
+    from{
+        transition: all 1s ease-in-out;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+      }
+    to{
+        transform: translate(70vw,0);
+        -webkit-transform: translate(70vw,0);
+        -moz-transform: translate(70vw,0);
+        -o-transform: translate(70vw,0);
+        -ms-transform: translate(70vw,0);
+    }
 }
-.box1{
-    transform: rotate(270deg);
-    -webkit-transform: rotate(270deg);
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    color: yellow;
-    font-size: 18px;
-    left: 150px;
-    top: 25px;
-    position: absolute;
-    -webkit-transition-property: width height background-color font-size left top transform -webkit-transform color;
-    -webkit-transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-in-out;
-    transition-property: width height background-color font-size left top transform -webkit-transformv color;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in-out;
+
+@keyframes swap3{
+    from{
+        transition: all 1s ease-in-out;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+      }
+    to{
+        transform: translate(-70vw,0);
+        -webkit-transform: translate(-70vw,0);
+        -moz-transform: translate(-70vw,0);
+        -o-transform: translate(-70vw,0);
+        -ms-transform: translate(-70vw,0);
+    }
+}
+
+.skill1{
+    animation-name:swap;
+    animation-duration:4s;
+    }
+
+.skill3{
+animation-name:swap3;
+animation-duration:4s;
 }
 
 
 @media screen and (max-width: 760px){
-
     .highlight{
         display: flex;
         flex-direction: column;
@@ -254,6 +261,10 @@ h2,.skills{
 
   .nav-active{
       transform: translateX(0%);
+  }
+
+  .skill3, .skill1{
+    animation: none;
   }
 
 
