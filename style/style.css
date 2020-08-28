@@ -164,51 +164,6 @@ h2,.skills{
     margin-bottom: 2em;
 }
 
-@keyframes swap{
-    from{
-        transition: all 1s ease-in-out;
-        -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        -o-transition: all 1s ease-in-out;
-        -ms-transition: all 1s ease-in-out;
-      }
-    to{
-        transform: translate(70vw,0);
-        -webkit-transform: translate(70vw,0);
-        -moz-transform: translate(70vw,0);
-        -o-transform: translate(70vw,0);
-        -ms-transform: translate(70vw,0);
-    }
-}
-
-@keyframes swap3{
-    from{
-        transition: all 1s ease-in-out;
-        -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        -o-transition: all 1s ease-in-out;
-        -ms-transition: all 1s ease-in-out;
-      }
-    to{
-        transform: translate(-70vw,0);
-        -webkit-transform: translate(-70vw,0);
-        -moz-transform: translate(-70vw,0);
-        -o-transform: translate(-70vw,0);
-        -ms-transform: translate(-70vw,0);
-    }
-}
-
-.skill1{
-    animation-name:swap;
-    animation-duration:4s;
-    }
-
-.skill3{
-animation-name:swap3;
-animation-duration:4s;
-}
-
-
 @media screen and (max-width: 760px){
     .highlight{
         display: flex;
@@ -262,11 +217,6 @@ animation-duration:4s;
   .nav-active{
       transform: translateX(0%);
   }
-
-  .skill3, .skill1{
-    animation: none;
-  }
-
 
   @keyframes navLinkFade{
     from{
