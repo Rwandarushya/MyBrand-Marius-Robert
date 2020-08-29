@@ -25,6 +25,10 @@
     text-decoration: none;
     color: black;
 }
+.nav-links li:hover{
+    transform: scale(1.2);
+    color: teal;
+}
 
 .signup-link{
     background-color: #252526;

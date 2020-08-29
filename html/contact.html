@@ -14,12 +14,10 @@
         <nav>
             <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
             <ul class="nav-links">
-                <li><a class="nav-link" href="../index.html">Home</a></li>
                 <li><a class="nav-link" href="../index.html"> About</a></li>
                 <li><a class="nav-link" href="">Portfolio</a></li>
-                <li><a class="nav-link" href="#">Contacts</a></li>
-                <li><a class="nav-link" href="blog.html">Blogs</a></li>
-                <li><a class="nav-link" onclick="adminLogin()"><i class="fas fa-user-cog 2x"></i></a></li>
+                <li><a class="nav-link active-link" href="#">Contacts</a></li>
+                <li><a class="nav-link" href="blog.html">Blog</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -30,11 +28,9 @@
     </section>
     <div class="close"></div>
         
-           <center><h1 class="title">Contact</h1></center>
-       
+    <center><h1 class="title">Contact</h1></center>       
        <section class="info">          
-           <div class="contact-form">
-               
+           <div class="contact-form">               
             <div class="container">
                 <div class="subtitle"><center><h4>Reach out to me<br>I would love to hear from you</h4></center></div>
                 <form id="contactForm">
@@ -46,32 +42,30 @@
                 </form>
             </div>
             <div class="social">
-                <a href=""><img class="icon" src="../assets/icons/twitter.png" alt=""></a>
-                <a href=""><img class="icon" src="../assets/icons/instagram.png" alt=""></a>
-                <a href=""><img class="icon" src="../assets/icons/linkedin.png" alt=""></a>
+                <a href=""><img class="socialIcon" src="../assets/icons/twitter.png" alt=""></a>
+                <a href=""><img class="socialIcon" src="../assets/icons/instagram.png" alt=""></a>
+                <a href=""><img class="socialIcon" src="../assets/icons/linkedin.png" alt=""></a>
             </div>
         </div>
-           <div class="info2">
-           <div class="phone">            
-               <img class="contact_icon" src="../assets/icons/phone.png" alt="phone icon"/>
-               <center><p>+250 782581020</p></center>               
-            </div>
-            <div class="adress">
-                <img class="contact_icon" src="../assets/icons/location.png" alt="phone icon"/>
-                <center>
-                <p>Kigali-Rwanda</p>
-               <p>KK 19 av.</p>
-                </center>           
-            </div>
-            <div class="email">
-                <center>
-                <img class="contact_icon" src="../assets/icons/email.png" alt="phone icon"/>
-                <p>rwandarushyarobert@gmail.com</p></center>               
-            </div>
-        </div>   
-
-       </section>
+       </section> 
    </div>
+   <section id="footer">
+    <div class="copyright">©Copyright all righ reserved</div>
+    <div class="adress">
+        <div class="phone adress-div">            
+            <i class="fas fa-phone-alt icon" ></i>
+            <p><a class="footer-link" href="tel://0782581020" target="_blank" class="phoneFooter">+250 782 581 020</a></p>             
+         </div>
+         <div class="location adress-div">
+            <i class="fas fa-map-marker-alt icon"></i>
+             <p><a class="footer-link" href="https://www.google.com/maps/place/Kabeza,+Kigali/@-1.9690481,30.1214027,17z/" target="_blank"> Kigali-Rwanda, KK 18 ave.</a></p>        
+         </div>
+         <div class="email adress-div">
+            <i class="fas fa-envelope icon"></i>
+             <p><a class="footer-link" href="https://www.gmail.com" target="_blank"> rwandarushyarobert@gmail.com</a> </p>              
+         </div>
+     </div>  
+</section>
    <script src="../script/script.js"></script>
    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>

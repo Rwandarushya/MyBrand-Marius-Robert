@@ -28,8 +28,11 @@ nav{
 }
 
 .nav-links  a{
-    text-decoration: none;
-    
+    text-decoration: none;    
+}
+.nav-links li:hover{
+    transform: scale(1.2);
+    color: teal;
 }
 .nav-link{
     text-decoration: none;
@@ -47,6 +50,12 @@ nav{
 .burger{
     display: none;
 }
+.close{
+    margin-top: 2em;;
+    background-color:grey;
+    width:100%;
+    height:10px;
+}
 
 .profile{
     width:15em;
@@ -58,10 +67,9 @@ nav{
 .highlight{
     display:flex;
     justify-content: space-between;
-    margin-top: 2em;
     height: 70vh;
-    border-style: solid;
-    border-width:1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 .greeting{
@@ -134,24 +142,12 @@ h2,.skills{
     align-items: center;
     padding: 3em;
 }
-.adress{
-    display: flex;
-    justify-content: space-around; 
-    flex-wrap: wrap;   
-}
-.adress-div{
-    margin: 3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.icon{
-    color: rgb(56, 143, 56);
-}
 
 .content{
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
 }
+
+
 
 #about{
     margin:auto;
@@ -162,6 +158,32 @@ h2,.skills{
     margin-top: 3em;
     justify-content: center;
     margin-bottom: 2em;
+}
+
+#footer{
+    background-color: rgb(71, 71, 71);
+    color:whitesmoke;
+    padding-top:2em;
+}
+.adress{
+    display: flex;
+    justify-content: space-evenly; 
+    margin-left:4em;
+}
+.adress-div{
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-right:2em;
+}
+.footer-link{
+    text-decoration: none;
+    color:whitesmoke;
 }
 
 @media screen and (max-width: 760px){
@@ -193,6 +215,11 @@ h2,.skills{
   body{
       overflow-x: hidden;
   }
+  .adress{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 
 .nav-links{
       position: absolute;
