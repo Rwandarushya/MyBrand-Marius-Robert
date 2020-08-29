@@ -4,6 +4,7 @@ checkUserState();
 function checkUserState(){
 firebase.auth().onAuthStateChanged(function(user) {
     let btn= document.getElementById('loginBtn');
+    let adminBtn=document.getElementById('adminBtn')
     if (user) {
       // User is signed in.
       var user = firebase.auth().currentUser;
@@ -14,6 +15,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     } else {
       // No user is signed in.
       btn.innerHTML="Log in";
+      adminBtn.style.display='none'
     }
   });
 }

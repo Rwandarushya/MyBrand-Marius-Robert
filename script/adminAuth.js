@@ -1,6 +1,5 @@
 
 function adminLogin(){
-
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -14,7 +13,7 @@ function adminLogin(){
                 window.location.href='../html/admin.html';
             } else {
                 // doc.data() will be undefined in this case
-                window.alert("Not admin!");
+                window.location.href='../html/notification.html';
             }
         }).catch(function(error) {
             console.log("Error getting document:", error);

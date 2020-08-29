@@ -3,15 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Raleway', sans-serif;
+}
 .wrapper{
     font-family: 'Raleway', sans-serif;
-    background: url(../assets/images/this2.jpg);
-    background-repeat: no-repeat;
-    background-position: 0 70px;
-    background-size: 100% 100%;
     padding-bottom: 10em;
     margin-top: 2em;
+    
 }
+
 
 nav{
     display:flex;
@@ -29,6 +30,10 @@ nav{
 .nav-links li{
     list-style: none;
 }
+.nav-links li:hover{
+    transform: scale(1.2);
+    color: teal;
+}
 
 .nav-links  a{
     text-decoration: none;
@@ -38,6 +43,15 @@ nav{
 .nav-link{
     text-decoration: none;
     color: black;
+}
+.active-link{
+    border-bottom: solid;
+    border-bottom-width: 2p;
+    border-bottom-color: teal;
+    box-sizing: content-box;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-bottom: 1em;
 }
 
 .burger >div {
@@ -69,12 +83,6 @@ nav{
 
 .info > div{
 margin-top: 3em;
-}
-
-.info2{
-    display: flex;
-    justify-content: space-evenly;
-    
 }
 
 .contact-form{
@@ -139,13 +147,13 @@ textarea{
     display: flex;
     flex-direction: column;
 }
-.icon{
+.socialIcon{
     width: 50px;
     height: 50px;
     margin-top: 1em;
 }
 
-.icon:hover{
+.socialIcon:hover{
     transform: scale(1.2);
 }
 
@@ -156,6 +164,31 @@ textarea{
     text-align: center;
     display: none;
 }
+#footer{
+    background-color: rgb(71, 71, 71);
+    color:whitesmoke;
+    padding-top:2em;
+}
+.adress{
+    display: flex;
+    justify-content: space-evenly; 
+    margin-left:4em;
+}
+.adress-div{
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-right:2em;
+}
+.footer-link{
+    text-decoration: none;
+    color:whitesmoke;
+}
 
 @media screen and (max-width: 760px){
     body{
@@ -164,12 +197,22 @@ textarea{
     .container{
         width:100vw;
     }
-
-    .icon{
-        width: 30px;
-        height: 30px;
-        margin-top: 0.5em;
+    .adress{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
     }
+    .contact-form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .social{
+        margin: 2em;
+        display: flex;
+        flex-direction: row;
+    }
+    
   
   .nav-links{
         position: absolute;

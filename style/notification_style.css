@@ -6,13 +6,20 @@
 body{
     font-family: 'Raleway', sans-serif;
 }
-.wrapper{
-
-    height: 100vh;
+.content{
+    height: 80vh;
    display: flex;
    align-items: center;
-   justify-content: flex-start; 
+   justify-content: center; 
    flex-direction: column;
+}
+.container{
+  margin-top: 2em;
+    display:flex;  
+   padding: 2em;
+   flex-wrap: wrap;
+   border-radius: 5px;
+   box-shadow: 2px 2px 5px 2px #888888;
 }
 .header{
     margin-top: 2rem;
@@ -72,50 +79,10 @@ nav{
    border-radius: 5px;
    box-shadow: 2px 2px 5px 2px #888888;
 }
-.signup-form{
-    margin-top: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.signup-form > div{
-    margin-bottom: 1.5em;
-}
-.right-side{
-    margin:2em;
-}
 
-.field{
-    height: 2.5em;
-    width: 25em;
-    border-radius:5px;
-    padding-left: 10px;
-}
 
-.btn-signup{
-    margin: auto;
-    font-weight: bold;
-    width: 150px;
-    height: 30px;
-    border-radius:8px;
-    color: #fff;
-    background-color: #252526
-}
 
-.btn-signup:hover{
-    transform: scale(1.05);
-}
-
-.back{
-    text-align: right;
-    margin-right: 12em;
-    margin-top: 3em;
-    text-decoration: none;
-}
-#back-link{
-    text-decoration: none;
-}
 #footer{
     background-color: rgb(71, 71, 71);
     color:whitesmoke;
@@ -143,9 +110,6 @@ nav{
 }
 
 @media screen and (max-width: 760px){
-.wrapper{
-    height: auto;
-}
 .container{
     display: flex;
     flex-direction: column;
