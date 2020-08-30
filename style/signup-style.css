@@ -67,8 +67,11 @@ nav{
     display:flex;   
    padding: 2em;
    flex-wrap: wrap;
-   border-radius: 5px;
-   box-shadow: 2px 2px 5px 2px #888888;
+   border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: teal;
+    box-shadow: 10px 5px 10px 2px #888888;
 }
 .signup-form{
     display: flex;
@@ -78,6 +81,13 @@ nav{
 
 .signup-form > div{
     margin-bottom: 1.5em;
+}
+.alert{
+    background-color: rgb(231, 113, 109);
+    padding: 1em;
+    width: 70%;
+    text-align: center;
+    display: none;
 }
 .right-side{
     margin:2em;
@@ -105,19 +115,10 @@ nav{
     transform: scale(1.05);
 }
 
-.back{
-    text-align: right;
-    margin-right: 12em;
-    margin-top: 2em;
-    
-}
-
-#back-link{
-    text-decoration: none;
-}
 #footer{
     background-color: rgb(71, 71, 71);
     color:whitesmoke;
+    margin-top:2em;
 }
 .adress{
     display: flex;
@@ -148,6 +149,9 @@ nav{
     .container{
         display: flex;
         flex-direction: column;
+    }
+    .alert{
+    width: 90%;
     }
     .adress{
         display: flex;

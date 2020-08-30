@@ -68,8 +68,7 @@ nav{
     display:flex;
     justify-content: space-between;
     height: 70vh;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+    box-shadow: 0 6px 2px -2px gray;
 }
 
 .greeting{

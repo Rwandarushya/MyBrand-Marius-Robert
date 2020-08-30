@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Raleway:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../style/notification_style.css">
 </head>
+
 <body>
     <section class="header">
         <nav>
-            <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+            <div><a class="nav-link name" href="../index.html">
+                    <h2>Marius Robert</h2>
+                </a> </div>
             <ul class="nav-links">
                 <li><a class="nav-link" href="../index.html"> About</a></li>
                 <li><a class="nav-link" href="">Portfolio</a></li>
@@ -27,31 +32,61 @@
         </nav>
     </section>
     <div class="close"></div>
-    <div class="content">
-        Choose option here   
-        <div class="container">
-           <div><Label>Get Email Notification for new Post </Label><input type="checkbox"></div>        
-        </div>  
-        <div class="container">
-            <div><Label>Subscribbe to weekly news </Label><input type="checkbox"></div>        
-         </div>
+    <div class="wrapper">
+        <h3>User Profile</h3>
+        <div class="content">
+            <div class="container">
+                <Label>Change Userprofile </Label>
+                <hr>
+                <form action="">
+                <div>
+                    <label>Full Names:</label><br>
+                    <input type="text" class="field" name="" id='username' required />
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="email" class="field" name="" id="email" required>
+                </div>                   
+                <div>
+                    <label>Password:</label><br>
+                    <input type="password" class="field" name="" id="pass" required/>
+                </div>
+                <div> 
+                    <label>Comfirm password:</label><br>
+                    <input type="password" class="field" name="" id="pass-2" required/>
+                </div> 
+                <div><button class="btn-change" type='submit'>Change User Profile</button></div>                  
+                </form>
+            </div>
+            <div class="container ">
+                <Label>Notification settings </Label>
+                <hr>
+                <div><Label>Get Notifications for new Posts </Label><input type="checkbox"></div>
+                <div><Label>Get Notifications for Comments </Label><input type="checkbox"></div>
+                <div><Label>Enable Weekly news </Label><input type="checkbox"></div>
+            </div>
+        </div>
     </div>
     <section id="footer">
         <div class="copyright">©Copyright all righ reserved</div>
         <div class="adress">
-            <div class="phone adress-div">            
-                <i class="fas fa-phone-alt icon" ></i>
-                <p><a class="footer-link" href="tel://0782581020" target="_blank" class="phoneFooter">+250 782 581 020</a></p>             
-             </div>
-             <div class="location adress-div">
+            <div class="phone adress-div">
+                <i class="fas fa-phone-alt icon"></i>
+                <p><a class="footer-link" href="tel://0782581020" target="_blank" class="phoneFooter">+250 782 581
+                        020</a></p>
+            </div>
+            <div class="location adress-div">
                 <i class="fas fa-map-marker-alt icon"></i>
-                 <p><a class="footer-link" href="https://www.google.com/maps/place/Kabeza,+Kigali/@-1.9690481,30.1214027,17z/" target="_blank"> Kigali-Rwanda, KK 18 ave.</a></p>        
-             </div>
-             <div class="email adress-div">
+                <p><a class="footer-link"
+                        href="https://www.google.com/maps/place/Kabeza,+Kigali/@-1.9690481,30.1214027,17z/"
+                        target="_blank"> Kigali-Rwanda, KK 18 ave.</a></p>
+            </div>
+            <div class="email adress-div">
                 <i class="fas fa-envelope icon"></i>
-                 <p><a class="footer-link" href="https://www.gmail.com" target="_blank"> rwandarushyarobert@gmail.com</a> </p>              
-             </div>
-         </div>   
+                <p><a class="footer-link" href="https://www.gmail.com" target="_blank"> rwandarushyarobert@gmail.com</a>
+                </p>
+            </div>
+        </div>
     </section>
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
@@ -61,4 +96,5 @@
     <script src="../script/login.js"></script>
     <script src="../script/script.js"></script>
 </body>
+
 </html>
