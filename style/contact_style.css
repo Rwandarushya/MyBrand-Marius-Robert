@@ -93,7 +93,10 @@ margin-top: 3em;
 .container{
     margin: auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px 10px #E5E5E5;
+    border-style: solid;
+    border-width: 1px;
+    border-color: teal;
+    box-shadow: 10px 5px 10px 2px #888888;
     width: 50%;
     padding: 1.2em;
 }
@@ -143,7 +146,7 @@ textarea{
 }
 
 .social{
-    margin-right: 1em;
+    margin-left: 1em;
     display: flex;
     flex-direction: column;
 }
@@ -205,7 +208,7 @@ textarea{
     .contact-form{
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .social{
         margin: 2em;

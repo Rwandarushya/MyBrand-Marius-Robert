@@ -9,7 +9,13 @@ function login(){
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
-        window.alert(errorMessage);
+
+      document.querySelector('.alert').style.display='block';
+      document.querySelector('.alert').innerHTML=errorMessage;
+      setTimeout(function(){
+          document.querySelector('.alert').style.display='none'; 
+      },3000);
+      document.getElementById('contactForm').reset();
       });
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
