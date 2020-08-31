@@ -280,8 +280,8 @@ body{
 }
 
 .post{
-    width: 90%;
-    margin: 2em;
+    width: 95%;
+    margin-top: 2em;
 }
 input, textarea{
     width: 80%;

@@ -96,20 +96,12 @@ function openPost(doc) {
   let comment_form = document.createElement('form');
   let txtLabel = document.createElement('label');
   let textarea = document.createElement('textarea');
-  let nameLabel = document.createElement('label');
-  let txtName = document.createElement('input');
-  let emailLabel = document.createElement('label');
-  let txtEmail = document.createElement('input');
   let btn = document.createElement('button');
   let close = document.createElement('i');
 
   comment_title.setAttribute('class', comment_title);
   comment_title.append("comments:");
 
-
-
-  txtName.setAttribute('id', 'name');
-  txtEmail.setAttribute('id', 'email');
   textarea.setAttribute('id', 'comment');
 
   close.setAttribute('class', "fa fa-close");
@@ -118,8 +110,6 @@ function openPost(doc) {
 
   btn.setAttribute('type', 'button');
   txtLabel.append('Comment:');
-  nameLabel.append('Names');
-  emailLabel.append('Email');
   title.append(doc.data().title);
   author.append('written by: ' + doc.data().author);
   likes.append('likes: ' + doc.data().likes);
@@ -139,10 +129,6 @@ function openPost(doc) {
 
   comment_form.appendChild(txtLabel);
   comment_form.appendChild(textarea);
-  comment_form.appendChild(nameLabel);
-  comment_form.appendChild(txtName);
-  comment_form.appendChild(emailLabel);
-  comment_form.appendChild(txtEmail);
   comment_form.appendChild(btn);
 
   comment_section.appendChild(comment_form);
@@ -197,17 +183,22 @@ function showAllPost() {
 
 
 function saveComment(doc) {
+  var names = '';
   firebase.auth().onAuthStateChanged(function (user) {
     let btn = document.getElementById('loginBtn');
     if (user) {
       // User is signed in.
-      let name = document.getElementById('name').value;
-      let email = document.getElementById('email').value;
+      var userCollection = db.collection("users").doc(user.uid);
+      userCollection.get().then(function (doc) {
+        names = doc.data().name;
+      }).catch(function (error) {
+        console.log("Error getting document:", error);
+      });
       let comment = document.getElementById('comment').value;
       db.collection("posts").doc(doc.id).update({
           comments: firebase.firestore.FieldValue.arrayUnion({
-            Names: name,
-            email: email,
+            Names: names,
+            email: user.email,
             comment: comment
           })
         })
@@ -227,7 +218,6 @@ function saveComment(doc) {
           setTimeout(function () {
             document.querySelector('.alert').style.display = 'none';
           }, 3000);
-          document.getElementById('comment_form').reset();
         });
     } else {
       // No user is signed in.
