@@ -153,13 +153,16 @@ nav{
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 2em;        
     }
     .signup-form,.right-side{
         padding-right: 1em;
     }
     .field{
-        width: 90vw;
+        width: 85vw;
+    }
+    .right-side{
+        width: 95%;
     }
     img{
         width: 100%;
