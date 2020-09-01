@@ -85,13 +85,13 @@ function userRef(doc) {
     guestBtn.setAttribute('name', doc.id);
     adminBtn.innerHTML = "Admin";
     guestBtn.innerHTML = "Guest";
-    btnDiv.appendChild(adminBtn);
-    btnDiv.appendChild(guestBtn);
+    
+   
     btnDiv.setAttribute('class', 'privelegesBtnDiv');
     if (doc.data().role == 'admin') {
-        adminBtn.disabled = true;
+        btnDiv.appendChild(guestBtn);
     } else {
-        guestBtn.disabled = true;
+        btnDiv.appendChild(adminBtn);
     }
 
 
@@ -185,7 +185,7 @@ function deletePost(id) {
         document.querySelector('.alert').style.display = 'block';
         document.querySelector('.alert').innerHTML = "Post Succesfully Deleted";
         setTimeout(function () {
-        document.querySelector('.alert').style.display = 'none';
+            document.querySelector('.alert').style.display = 'none';
         }, 3000);
     }).catch(function (error) {
         document.querySelector('.alert').style.display = 'block';
@@ -200,7 +200,6 @@ function editPost(id) {
     addPost();
     var edit_form = document.getElementById('form-post');
     let tit = document.getElementById('tit');
-    let author = document.getElementById('author');
     let body = document.getElementById('content');
     let btn = document.getElementById('btn-publish');
     btn.setAttribute('class', 'btn-publish');
@@ -228,13 +227,12 @@ function editPost(id) {
 function updatepost(id) {
     let cate = document.getElementById('cate');
     let tit = document.getElementById('tit');
-    let author = document.getElementById('author');
     let body = document.getElementById('content');
 
     // Set the new  field of the post'
     db.collection("posts").doc(id).update({
             "category": cate.value,
-            "title": tit.value,
+            // "title": tit.value,
             "author": author.value,
             "body": body.value,
         })
@@ -271,8 +269,12 @@ function savePost(e) {
     let category = document.getElementById('cate').value;
     let title = document.getElementById('tit').value;
     let content = document.getElementById('content').value;
-    let author = document.getElementById('author').value;
-    db.collection("posts").add({
+    
+        var user = firebase.auth().currentUser;
+        var userCollection = db.collection("users").doc(user.uid);
+        userCollection.get().then(function (doc) {
+        let author=doc.data().username;
+        db.collection("posts").add({
             author: author,
             category: category,
             title: title,
@@ -297,6 +299,9 @@ function savePost(e) {
         });
     document.getElementById('form-post').reset();
 
+
+        });
+         
 }
 
 function makeUserAdmin(docId) {
@@ -333,10 +338,11 @@ function makeUserGuest(docId) {
             document.querySelector('.alert').innerHTML = "User priviledges successfully updated!";
             setTimeout(function () {
                 document.querySelector('.alert').style.display = 'none';
-            }, 3000);            
+            }, 3000);
         })
         .catch(function (error) {
             // The document probably doesn't exist.
             console.error("Error updating users: ", error);
         });
 }
+

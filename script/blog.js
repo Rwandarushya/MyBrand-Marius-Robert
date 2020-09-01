@@ -182,43 +182,44 @@ function showAllPost() {
 }
 
 
-function saveComment(doc) {
-  var names = '';
+function saveComment(post) {
   firebase.auth().onAuthStateChanged(function (user) {
     let btn = document.getElementById('loginBtn');
     if (user) {
       // User is signed in.
       var userCollection = db.collection("users").doc(user.uid);
       userCollection.get().then(function (doc) {
-        names = doc.data().name;
+        let userName=doc.data().username;
+        let comment = document.getElementById('comment').value;
+        db.collection("posts").doc(post.id).update({
+              comments: firebase.firestore.FieldValue.arrayUnion({
+              Names: userName,
+              email: user.email,
+              comment: comment
+            })
+          })
+          .then(function () {
+            document.querySelector('.alert').style.display = 'block';
+            document.querySelector('.alert').innerHTML = "Comment sent";
+            setTimeout(function () {
+              document.querySelector('.alert').style.display = 'none';
+            }, 3000);
+            location.reload();
+          })
+          .catch(function (error) {
+            console.log(error)
+            var message_error = error.message_error;
+            document.querySelector('.alert').style.display = 'block';
+            document.querySelector('.alert').innerHTML = message_error;
+            setTimeout(function () {
+              document.querySelector('.alert').style.display = 'none';
+            }, 3000);
+          });
       }).catch(function (error) {
         console.log("Error getting document:", error);
       });
-      let comment = document.getElementById('comment').value;
-      db.collection("posts").doc(doc.id).update({
-          comments: firebase.firestore.FieldValue.arrayUnion({
-            Names: names,
-            email: user.email,
-            comment: comment
-          })
-        })
-        .then(function (docRef) {
-          document.querySelector('.alert').style.display = 'block';
-          document.querySelector('.alert').innerHTML = "Comment sent";
-          setTimeout(function () {
-            document.querySelector('.alert').style.display = 'none';
-          }, 3000);
-          document.getElementById('comment_form').reset();
-          location.reload();
-        })
-        .catch(function (error) {
-          var message_error = error.message_error;
-          document.querySelector('.alert').style.display = 'block';
-          document.querySelector('.alert').innerHTML = message_error;
-          setTimeout(function () {
-            document.querySelector('.alert').style.display = 'none';
-          }, 3000);
-        });
+
+
     } else {
       // No user is signed in.
 
@@ -227,7 +228,6 @@ function saveComment(doc) {
       setTimeout(function () {
         document.querySelector('.alert').style.display = 'none';
       }, 3000);
-      document.getElementById('comment_form').reset();
     }
   });
 
