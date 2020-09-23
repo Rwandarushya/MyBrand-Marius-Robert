@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marius Robert Blogs</title>
+    <script src="https://kit.fontawesome.com/f8a58fa297.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Playfair+Display&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/blog-style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="alert"></div>
+        <div class="header">
+            <nav>
+                <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="../index.html"> About</a></li>
+                    <li><a class="nav-link" href="">Portfolio</a></li>
+                    <li><a class="nav-link" href="contact.html">Contacts</a></li>
+                    <li><a class="nav-link active-link" href="#">Blog</a></li>
+                    <li><a class="nav-link" id="adminBtn" onclick="adminLogin()"><i class="fas fa-user-cog 2x"></i></a></li>
+                    <li><a class="nav-link  signup-link" id="loginBtn" href="login.html">Login</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+        <div class="close"></div>
+        <div class="container">
+        <div class="left-side">
+            <div class="content">
+                <div class="title"><h1>Web Technology</h1></div>
+                <div class="postList"></div>
+                <div class="viewAll"><button class="btn-all">View all posts</button></div>    
+            </div>
+            <div class="read-post">
+                
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="recent">
+             <h3 id="recent-title">Recent Post</h3>
+             <div class="recent-links">
+            </div>
+            </div>
+            <div class="search">
+            <input type="text" class="txt-search" placeholder="search">
+            <button class="btn-search">Search</button>
+        </div>
+        </div>
+    </div>
+    <script src="../script/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="../script/firebase.js"></script>
+    <script src="../script/adminAuth.js"></script>
+    <script src="../script/blog.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>

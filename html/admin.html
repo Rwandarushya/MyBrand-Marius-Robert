@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script src="https://kit.fontawesome.com/f8a58fa297.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/admin.css">
+</head>
+<body>
+    <div class="alert"></div>
+    <nav>
+        <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+        <ul class="nav-links">
+            <li><a class="nav-link" href="../index.html"> About</a></li>
+            <li><a class="nav-link" href="">Portfolio</a></li>
+            <li><a class="nav-link" href="contact.html">Contacts</a></li>
+            <li><a class="nav-link" href="blog.html">Blog</a></li>
+            </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <section class="header">
+        </section>
+        <section class="container">
+            <div class="setting">
+                <div class="setting-head">
+                    <h4>Settings</h4>
+                </div>
+                <div class="setting-body">
+                    <ul class="list">
+                        <li><a href="#posts" id="post-section" >Manage Posts</a> </li>
+                        <li><a href="#users" id="user-section">Manage Users</a> </li>
+                        <li><a href="#messages" id="message-section">Manage Messages</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+            <div class="aside">
+            <section class="post_section" id="posts">
+                <h2>Blog Posts</h2>
+                <div class="createBtn"><button class="btn-add" onclick="addPost()">Create New post</button></div>
+                <div class="postList">
+
+                </div>
+            </section>
+            <section class="users" id="users">
+                <h2>users</h2>
+                <table>
+                    <thead>
+                        <th>No</th>
+                        <th>UserName</th>
+                        <th>Email</th>
+                        <th>role</th>
+                        <th colspan="2">Chane Priveleges to</th>
+                    </thead>
+                    <tbody class="user-table">
+                    </tbody>
+                </table>
+            </section>
+            <section class="messages" id="messages">
+                <h2>Messages</h2>
+                <table>
+                    <thead>
+                        <th>No</th>
+                        <th>Names</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th >Delete Message</th>
+                    </thead>
+                    <tbody class="table-msg">
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="create-post">
+           <div class="post-head">
+               <div class="create_post_header">
+                   <h3>Create new Post</h3>
+                   <div><button class="closeBtn" onclick="hideCreatePost()" style="color:rgb(53, 53, 114);"><i class="fas fa-times-circle fa-3x"></i></button></div>
+                </div>               
+               <form action="" class="form-post" id="form-post">
+                   <div class="form-elements">
+                    <div><label for="">Post Category:</label><br> 
+                        <select name="" id="cate">
+                            <option value="Web Technology">Web Technology</option>
+                            <option value="Digital marketing">Digital marketing</option>
+                            <option value="Cyber security">Cyber security</option>
+                            <option value="Others">Others..</option>
+                        </select>
+                   </div>
+                   <div><label for="">Post title:</label><br>
+                    <input type="text" id="tit" required>
+                    </div>
+                   <div>                    
+                    <label for="">Post body:</label><br>
+                    <div class="toolBar">
+                        <button><i class="fas fa-undo"></i></button>
+                        <button><i class="fas fa-redo"></i></button>
+                        <button><b>B</b> </button>
+                        <button><i>i</i></button>
+                        <button> <u>u</u> </button>
+                        <button><i class="fas fa-list-ul"></i></button>
+                        <button><i class="far fa-image"></i></button>
+                        <select name="" id="">
+                            <option value="">12</option>
+                            <option value="">18</option>
+                            <option value="">24</option>
+                            <option value="">28</option>
+                            <option value="">30</option>
+                        </select>
+                    </div>
+                    <textarea name="" id="content" cols="30" rows="10" required>Write here...</textarea>
+                   </div>  
+                   <button class="btn-publish" id="btn-publish" type="submit"> Publish Post</button>            
+               </form>
+           </div>
+           <div class="post-body"></div>
+        </div>
+    </div>
+        </div>
+        
+        </section>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="../script/firebase.js"></script>
+    <script src="../script/admin.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>

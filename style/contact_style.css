@@ -1,0 +1,263 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.wrapper{
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 10em;
+    margin-top: 2em;
+    
+}
+
+
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+.nav-links li:hover{
+    transform: scale(1.2);
+    color: teal;
+}
+
+.nav-links  a{
+    text-decoration: none;
+    
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+.active-link{
+    border-bottom: solid;
+    border-bottom-width: 2p;
+    border-bottom-color: teal;
+    box-sizing: content-box;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-bottom: 1em;
+}
+
+.burger >div {
+    width:25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.burger{
+    display: none;
+}
+
+.close{
+    margin-top: 2em;;
+    background-color:grey;
+    width:100%;
+    height:10px;
+}
+
+
+
+.title{
+    margin: auto;
+    margin-top: 1em;
+    color:#000;
+}
+
+.info > div{
+margin-top: 3em;
+}
+
+.contact-form{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    margin: auto;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: teal;
+    box-shadow: 10px 5px 10px 2px #888888;
+    width: 50%;
+    padding: 1.2em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+form > input{
+    width:100%;
+    height: 3em;
+    margin-bottom: 1.5em;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 10px;
+}
+textarea{
+    width:100%;
+    height: 10em;
+    margin-bottom: 1.5em;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 10px;
+}
+
+.message{
+    height: 10em;
+}
+
+#send-btn{
+    margin: auto;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius:8px;
+    color: #fff;
+    background: #252526;
+    
+}
+
+.contact_icon{
+    width: 8em;
+}
+
+.social{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.socialIcon{
+    width: 50px;
+    height: 50px;
+    margin-top: 1em;
+}
+
+.socialIcon:hover{
+    transform: scale(1.2);
+}
+
+.alert{
+    background-color: lightskyblue;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+#footer{
+    background-color: rgb(71, 71, 71);
+    color:whitesmoke;
+    padding-top:2em;
+}
+.adress{
+    display: flex;
+    justify-content: space-evenly; 
+    margin-left:4em;
+}
+.adress-div{
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-right:2em;
+}
+.footer-link{
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+@media screen and (max-width: 760px){
+    body{
+        overflow-x: hidden;
+    }
+    .container{
+        width:100vw;
+    }
+    .adress{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .contact-form{
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .social{
+        margin: 2em;
+        display: flex;
+        flex-direction: row;
+    }
+    
+  
+  .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 80vh;
+        top: 12vh;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in  ;
+    }
+  
+   .nav-links li{
+       opacity: 0;
+   }
+    .burger{
+        display:block;
+    }
+  
+    .nav-active{
+        transform: translateX(0%);
+    }
+  
+    @keyframes navLinkFade{
+      from{
+          opacity:0;
+          transform: translateX(50px);
+      }
+      to{
+          opacity: 1;
+          transform: translateX(0px);
+      }
+    } 
+    .toggle .line1{
+      transform :rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+        opacity: 0 ;
+  }
+  .toggle .line3{
+      transform :rotate(45deg) translate(-5px, -6px);
+  }
+}

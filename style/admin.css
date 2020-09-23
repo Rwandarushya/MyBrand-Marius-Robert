@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+    font-family: 'Raleway', sans-serif;
+}
+table{
+    background-color: white;
+}
+.wrapper{
+    height: 100vh;
+    width: 94vw;
+    margin: auto;
+}
+
+.header{
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    font-family: 'Raleway', sans-serif;;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: white;
+    width: 100vw;
+    margin-left: 0;
+    padding: 2em;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links  a{
+    text-decoration: none;
+    
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+
+.burger >div {
+    width:25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.burger{
+    display: none;
+}
+
+.container{
+    margin-top: 2em;
+    display:flex;
+}
+.setting{
+    width: 21%;
+    height: 60vh;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    position: fixed;
+    right: 0;
+}
+.setting-head{
+    display: flex;
+    width: 100%;
+    background-color: #80afa7;
+    color:white;
+    height:4em;
+    justify-content: center;
+    align-items: center;
+}
+.setting-body{
+    height: 50vh;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list >li{
+    margin:2em;
+    list-style: none;
+    display: inline;
+}
+.list >li :hover{
+    border-style: solid;
+    border-color: teal;
+    border-width: 1px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 1.5em;
+}
+.active-li{
+    border-bottom: solid;
+    border-bottom-width: 2p;
+    border-bottom-color: teal;
+    box-sizing: content-box;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 1.5em;
+}
+.alert{
+    background-color: skyblue;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    display: none;
+    position:fixed;
+    top:0;
+    z-index: 10;
+}
+
+.content{
+    width: 70%;
+}
+.aside{
+    margin-left: 4em;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    margin-bottom: 3em;
+}
+.create-post{
+    margin-left:4em; 
+}
+.createBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8%;
+}
+.btn-add{
+    width: 10em;
+    height: 2em;
+    border-radius: 5px;
+    background-color: #252526;
+    color:#fff;
+    font-size: 1rem;
+}
+.postList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.post{
+    width: 16em;
+    margin-top: 1em;
+    margin-right: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: teal;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 5px 2px #888888;
+    padding:1em;
+}
+img{
+    width: 100%;
+}
+.action_div{
+    display: flex;
+    justify-content: center;
+}
+.info{
+    color:grey;
+    font-size: 0.8em;
+}
+
+.editBtn{
+    background-color: rgb(75, 185, 75);
+}
+.removeBtn{
+    background-color: #d35f5f;
+}
+.action_div>button{
+    width: 3em;
+    height: 2.5em;
+    border-radius: 5px;
+    color: white;
+}
+.beleteBtn{
+    width: 3em;
+    height: 2.5em;
+    border-radius: 5px;
+    color: white;
+    background-color: #d35f5f;
+}
+
+table{
+    margin-top: 2em;
+    width: 100%;
+}
+
+th{
+    height: 3em;
+    background-color:#80afa7 ;
+    color:black;
+}
+td{
+    padding: 1.5em;
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.privelegesBtnDiv{
+    display: flex;
+}
+.privelegesBtnDiv>button{
+    height: 2em;
+    border-radius: 5px;
+    width: 60%;
+    color: white;
+    background-color: rgb(34, 34, 83);
+}
+
+.post{
+    display: block; 
+    
+}
+
+.create-post{
+    display: none;
+}
+.post-head{
+    width: 80%;
+    padding: 2em;
+   border-radius: 5px;
+   box-shadow: 2px 2px 5px 2px #888888;
+}
+.create_post_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolBar{
+    display: flex;
+}
+.toolBar >button{
+    width: 2em;
+
+}
+.form-elements> *{
+margin-top: 1.5em;
+}
+
+input, textarea{
+    width: 40vw;
+    border-radius:5px;
+    padding-left: 10px;
+}
+
+input{
+    height: 2.5em;
+}
+
+.btn-publish{
+    margin: auto;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius:8px;
+    color: #fff;
+    background-color: #252526
+}
+
+@media screen and (max-width: 760px){
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 80vh;
+        top: 12vh;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in  ;
+        z-index: 2;
+    }
+  
+   .nav-links li{
+       opacity: 0;
+   }
+    .burger{
+        display:block;
+    }
+  
+    .nav-active{
+        transform: translateX(0%);
+    }
+      .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .setting{
+        width: 100vw;
+        height: auto;
+        position: relative;
+    }
+    .setting-body{height: auto;}
+    .list{
+        display: flex;
+        flex-direction: row;
+    }
+    .content{
+        width: 100%;
+    }
+    
+    .post{
+        width: 90vw;
+    margin-top: 1em;
+    margin-right: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: teal;
+    border-radius: 5px;
+    background-color: white;
+    }
+    .create-post{
+        margin-left:0; 
+    }
+    .post-head{
+        width: 100%;
+    }
+
+    .aside{
+        margin-top: 2em;
+        margin-left: 0;
+    }
+
+    input, textarea{
+        width: 80vw;
+    }
+    
+    @keyframes navLinkFade{
+        from{
+            opacity:0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+      } 
+      .toggle .line1{
+        transform :rotate(-45deg) translate(-5px, 6px);
+      }
+      .toggle .line2{
+          opacity: 0 ;
+    }
+    .toggle .line3{
+        transform :rotate(45deg) translate(-5px, -6px);
+    }
+    
+
+}

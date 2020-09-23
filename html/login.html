@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/login-sytle.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <div><a class="nav-link name" href="../index.html"><h2>Marius Robert</h2></a> </div>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="../index.html"> About</a></li>
+                <li><a class="nav-link" href="">Portfolio</a></li>
+                <li><a class="nav-link" href="contact.html">Contacts</a></li>
+                <li><a class="nav-link" href="blog.html">Blog</a></li>
+                <li><a class="nav-link" onclick="adminLogin()"><i class="fas fa-user-cog 2x"></i></a></li>
+
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </section>
+    <div class="close"></div>
+    <div class="wrapper">
+        <div >
+            <h3 style="margin: 2em;">Login Form</h3>            
+        </div>
+        <div class="alert"></div>
+        <div class="container">
+            <div class="signup-form">
+                <div>
+                    <label>Email:</label><br>
+                    <input type="email" class="field" name="" id="email" required/>
+                </div>                   
+                <div>
+                    <label>Password:</label><br>
+                    <input type="password" class="field" name="" id="pass" required/>
+                </div>
+                <div><button class="btn-signup" onclick="login()">Login</div> 
+             <center><p id="small">Don't have account?<a href="signup.html">Signup here</a></p></center>                 
+            </div>
+            <div class="right-side">
+                <img src="../assets/images/keyboard.jpg" class="form-img"/>
+            </div>            
+        </div>        
+    </div>
+    <section id="footer">
+        <div class="copyright">©Copyright all righ reserved</div>
+        <div class="adress">
+            <div class="phone adress-div">            
+                <i class="fas fa-phone-alt icon" ></i>
+                <p><a class="footer-link" href="tel://0782581020" target="_blank" class="phoneFooter">+250 782 581 020</a></p>             
+             </div>
+             <div class="location adress-div">
+                <i class="fas fa-map-marker-alt icon"></i>
+                 <p><a class="footer-link" href="https://www.google.com/maps/place/Kabeza,+Kigali/@-1.9690481,30.1214027,17z/" target="_blank"> Kigali-Rwanda, KK 18 ave.</a></p>        
+             </div>
+             <div class="email adress-div">
+                <i class="fas fa-envelope icon"></i>
+                 <p><a class="footer-link" href="https://www.gmail.com" target="_blank"> rwandarushyarobert@gmail.com</a> </p>              
+             </div>
+         </div>  
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="../script/firebase.js"></script>
+    <script src="../script/adminAuth.js"></script>
+    <script src="../script/login.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>
